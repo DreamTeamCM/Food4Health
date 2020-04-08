@@ -17,10 +17,6 @@ buildscript {
     }
 }
 
-androidExtensions {
-    experimental = true
-}
-
 allprojects {
     repositories {
         google()
