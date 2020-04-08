@@ -1,16 +1,15 @@
 package com.sinergia.food4health.presentation.Main.View
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.sinergia.food4health.R
 import com.sinergia.food4health.base.BaseActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
 
     // CONSTRUCTOR
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
 
     }
