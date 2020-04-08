@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "886782762764",
+    "firebase_url": "https://food4health-4b3e0.firebaseio.com",
+    "project_id": "food4health-4b3e0",
+    "storage_bucket": "food4health-4b3e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886782762764:android:c1976f85a59c16743c7329",
+        "android_client_info": {
+          "package_name": "com.sinergia.food4health"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "886782762764-uqfup0odoa02cppp2k51nrlv7m6p5nui.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sinergia.food4health",
+            "certificate_hash": "5d416f1209e0199081fd044dab13ce20d5ba1b80"
+          }
+        },
+        {
+          "client_id": "886782762764-t4vlvfkos2a64djli3jrt6o4hnsk15ic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9iJxWISVffFYS829N1SbLMjGHX_7KTGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "886782762764-t4vlvfkos2a64djli3jrt6o4hnsk15ic.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
