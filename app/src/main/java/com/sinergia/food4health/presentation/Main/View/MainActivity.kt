@@ -20,7 +20,7 @@ class MainActivity : BaseActivity() {
     }
 
     override fun getPageTitle(): String {
-        return "PÁGINA PRINCIPAL"
+        return getString(R.string.PG_MAINPAGE)
     }
 
 
