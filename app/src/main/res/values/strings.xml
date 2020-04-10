@@ -1,4 +1,32 @@
 <resources>
     <string name="app_name">Food4Health</string>
+
+    <!-- PAGE NAME STRINGS -->
     <string name="PG_MAINPAGE">PÁGINA PRINCIPAL</string>
+    <string name="PG_REGISTER">REGISTRO</string>
+
+    <!-- FORMS STRINGS -->
+    <string name="FR_NAME">Nombre:</string>
+    <string name="FR_LASTNAME1">Primer Apellido:</string>
+    <string name="FR_LASTNAME2">Segundo Apellido:</string>
+    <string name="FR_NIF">NIF:</string>
+    <string name="FR_EMAIL">Correo Electrónico:</string>
+    <string name="FR_PASSWORD">Contraseña:</string>
+
+    <!-- FORMS HINT STRINGS -->
+    <string name="FRH_NAME">Nombre de Usuario</string>
+    <string name="FRH_LASTNAME1">Primer Apellido del Usuario</string>
+    <string name="FRH_LASTNAME2">Segundo Apellido del Usuario</string>
+    <string name="FRH_NIF">NIF del Usuario</string>
+    <string name="FRH_EMAIL">Correo Electrónico del Usuario</string>
+    <string name="FRH_PASSWORD">Contraseña del Usuario</string>
+    <string name="FRH_REPEAT_PASSWORD">Repite Contraseña del Usuario</string>
+
+    <!-- BUTTONS STRINGS -->
+    <string name="BTN_ACCEPT">ACEPTAR</string>
+    <string name="BTN_CANCEL">CANCELAR</string>
+    <string name="BTN_LOGIN">ENTRAR</string>
+    <string name="BTN_REGISTER">REGISTARSE</string>
+
+
 </resources>

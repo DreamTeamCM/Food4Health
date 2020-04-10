@@ -1,4 +1,4 @@
-package com.sinergia.food4health
+package com.food4health
 
 import android.app.Application
 

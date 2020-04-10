@@ -1,4 +1,4 @@
-package com.sinergia.food4health.base
+package com.food4health.base
 
 import android.content.Context
 import android.os.Bundle
@@ -23,7 +23,7 @@ abstract class BaseActivity: AppCompatActivity() {
 
     @LayoutRes
     abstract fun getLayout(): Int
-    abstract fun getPageTitle() : String
+    abstract fun getPageTitle(): String
 
     fun toastS(context: Context, message: String?){
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()

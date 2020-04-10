@@ -1,4 +1,4 @@
-package com.sinergia.food4health.data.DataBase
+package com.food4health.data.DataBase
 
 import com.google.firebase.firestore.FirebaseFirestore
 

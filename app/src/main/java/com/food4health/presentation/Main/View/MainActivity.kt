@@ -1,8 +1,8 @@
-package com.sinergia.food4health.presentation.Main.View
+package com.food4health.presentation.Main.View
 
 import android.os.Bundle
 import com.sinergia.food4health.R
-import com.sinergia.food4health.base.BaseActivity
+import com.food4health.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
