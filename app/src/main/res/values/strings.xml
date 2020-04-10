@@ -29,4 +29,7 @@
     <string name="BTN_REGISTER">REGISTARSE</string>
 
 
+    <!-- ERROR MESSAGES -->
+    <string name="ERR_REGISTER_FAILURE">No se ha podido completar el registro, por favor, inténtelo más tarde.</string>
+
 </resources>

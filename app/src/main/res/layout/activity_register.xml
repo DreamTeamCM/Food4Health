@@ -49,13 +49,13 @@
                     android:inputType="text" />
 
                 <TextView
-                    android:id="@+id/register_userFistrLastName_aux"
+                    android:id="@+id/register_userFirstLastName_aux"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/FR_LASTNAME1" />
 
                 <EditText
-                    android:id="@+id/register_userFistrLastName"
+                    android:id="@+id/register_userFirstLastName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
