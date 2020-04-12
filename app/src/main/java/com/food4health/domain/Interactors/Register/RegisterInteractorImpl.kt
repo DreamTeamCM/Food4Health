@@ -1,4 +1,4 @@
-package com.food4health.domain.Interactors
+package com.food4health.domain.Interactors.Register
 
 import android.util.Log
 import com.food4health.base.Exceptions.FirebaseRegisterException
@@ -8,7 +8,8 @@ import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 
-class RegisterInteractorImpl: RegisterInteractor {
+class RegisterInteractorImpl:
+    RegisterInteractor {
 
     override suspend fun register(name: String, email: String, password: String): Unit = suspendCancellableCoroutine {registerContinuation ->
 

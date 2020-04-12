@@ -1,11 +1,10 @@
 package com.food4health.presentation.Register.Presenter
 
-import android.provider.Settings.Global.getString
 import android.util.Log
 import com.food4health.base.Exceptions.FirebaseAddUserException
 import com.food4health.base.Exceptions.FirebaseRegisterException
 import com.food4health.data.Model.User
-import com.food4health.domain.Interactors.RegisterInteractor
+import com.food4health.domain.Interactors.Register.RegisterInteractor
 import com.food4health.presentation.Register.Model.RegisterViewModel
 import com.food4health.presentation.Register.RegisterContract
 import com.sinergia.food4health.R
@@ -104,7 +103,7 @@ class RegisterPresenter(registerInteractor: RegisterInteractor, registerViewMode
 
             Log.d(TAG, "Trying to register user in Firebase with email ${user.email}.")
 
-            view?.showProgressBar()
+            view?.showRegisterProgressBar()
             view?.disableRegisterButton()
 
             try {
@@ -115,12 +114,12 @@ class RegisterPresenter(registerInteractor: RegisterInteractor, registerViewMode
 
                     Log.d(TAG, "Trying to add new user to database with email ${user.email}...")
                     registerViewModel?.addUser(user)
-                    Log.d(TAG, "Succesgully added new user to database with email ${user.email}.")
+                    Log.d(TAG, "Succesfully added new user to database with email ${user.email}.")
 
                 } catch (error: FirebaseAddUserException){
 
                     if(isViewAttached()){
-                        view?.hideProgressBar()
+                        view?.hideRegisterProgressBar()
                         view?.enableRegisterButton()
                         view?.showError(R.string.ERR_REGISTER_FAILURE)
                     }
@@ -130,7 +129,7 @@ class RegisterPresenter(registerInteractor: RegisterInteractor, registerViewMode
                 }
 
                 if(isViewAttached()){
-                    view?.hideProgressBar()
+                    view?.hideRegisterProgressBar()
                     view?.enableRegisterButton()
                     view?.navigateToLogin()
                 }
@@ -138,7 +137,7 @@ class RegisterPresenter(registerInteractor: RegisterInteractor, registerViewMode
             } catch (error: FirebaseRegisterException) {
 
                 if(isViewAttached()){
-                    view?.hideProgressBar()
+                    view?.hideRegisterProgressBar()
                     view?.enableRegisterButton()
                     view?.showError(R.string.ERR_REGISTER_FAILURE)
                 }

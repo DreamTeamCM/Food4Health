@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import com.food4health.base.BaseActivity
 import com.food4health.data.Model.User
-import com.food4health.domain.Interactors.RegisterInteractorImpl
+import com.food4health.domain.Interactors.Register.RegisterInteractorImpl
 import com.food4health.presentation.Main.View.MainActivity
 import com.food4health.presentation.Register.Model.RegisterViewModelImpl
 import com.food4health.presentation.Register.Presenter.RegisterPresenter
@@ -13,7 +13,7 @@ import com.food4health.presentation.Register.RegisterContract
 import com.sinergia.food4health.R
 import kotlinx.android.synthetic.main.activity_register.*
 
-class Register : BaseActivity(), RegisterContract.RegisterView {
+class RegisterActivity : BaseActivity(), RegisterContract.RegisterView {
 
     lateinit var registerPresenter: RegisterContract.RegisterPresenter
 
@@ -46,11 +46,11 @@ class Register : BaseActivity(), RegisterContract.RegisterView {
         toastL(this, getString(message))
     }
 
-    override fun showProgressBar() {
+    override fun showRegisterProgressBar() {
         register_progressBar.visibility = View.VISIBLE
     }
 
-    override fun hideProgressBar() {
+    override fun hideRegisterProgressBar() {
         register_progressBar.visibility = View.INVISIBLE
     }
 
@@ -87,7 +87,7 @@ class Register : BaseActivity(), RegisterContract.RegisterView {
             }
 
             if(registerPresenter.checkEmptyRegisterFirstLastName(userFirstLastName)){
-                register_userFirstLastName.error = "¡Cuidado! Te has dejado vacío el campo 'nombre'."
+                register_userFirstLastName.error = "¡Cuidado! Te has dejado vacío el campo 'Primer Apellido'."
             }
 
             if(registerPresenter.checkEmptyRegisterSecondLastName(userSecondLastName)){

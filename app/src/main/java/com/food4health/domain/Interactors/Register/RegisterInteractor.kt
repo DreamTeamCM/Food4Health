@@ -1,4 +1,4 @@
-package com.food4health.domain.Interactors
+package com.food4health.domain.Interactors.Register
 
 interface RegisterInteractor {
 

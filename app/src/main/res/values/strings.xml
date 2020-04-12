@@ -4,6 +4,7 @@
     <!-- PAGE NAME STRINGS -->
     <string name="PG_MAINPAGE">PÁGINA PRINCIPAL</string>
     <string name="PG_REGISTER">REGISTRO</string>
+    <string name="PG_LOGIN">LOGIN</string>
 
     <!-- FORMS STRINGS -->
     <string name="FR_NAME">Nombre:</string>
@@ -31,5 +32,6 @@
 
     <!-- ERROR MESSAGES -->
     <string name="ERR_REGISTER_FAILURE">No se ha podido completar el registro, por favor, inténtelo más tarde.</string>
+    <string name="ERR_LOGIN_FAILURE">No se ha podido iniciar sesión, por favor, revisa tus datos e inténtelo de nuevo.</string>
 
 </resources>

@@ -8,8 +8,8 @@ interface RegisterContract {
 
         fun showError(error: Int)
         fun showMessage(message: Int)
-        fun showProgressBar()
-        fun hideProgressBar()
+        fun showRegisterProgressBar()
+        fun hideRegisterProgressBar()
         fun enableRegisterButton()
         fun disableRegisterButton()
         fun navigateToLogin()

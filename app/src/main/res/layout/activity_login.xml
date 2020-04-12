@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.food4health.presentation.Main.View.MainActivity"
+    tools:context="com.food4health.presentation.Login.View.LoginActivity"
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
@@ -30,31 +30,54 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
                 android:orientation="vertical"
                 android:padding="25dp">
+
+                <TextView
+                    android:id="@+id/login_userMail_aux"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/FR_EMAIL" />
+
+                <EditText
+                    android:id="@+id/login_userMail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:ems="10"
+                    android:hint="@string/FRH_EMAIL"
+                    android:inputType="textEmailAddress" />
+
+                <TextView
+                    android:id="@+id/login_userPass_aux"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/FR_PASSWORD" />
+
+                <EditText
+                    android:id="@+id/login_userPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/FRH_PASSWORD"
+                    android:inputType="textPassword" />
 
                 <ProgressBar
                     android:id="@+id/login_progressBar"
                     style="?android:attr/progressBarStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="40dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
                     android:visibility="invisible"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:gravity="center_horizontal">
                     <Button
-                        android:id="@+id/main_login_button"
-                        android:layout_width="250dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="40dp"
-                        android:text="@string/BTN_LOGIN" />
-                    <Button
-                        android:id="@+id/main_register_button"
+                        android:id="@+id/login_button"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:text="@string/BTN_LOGIN" />
