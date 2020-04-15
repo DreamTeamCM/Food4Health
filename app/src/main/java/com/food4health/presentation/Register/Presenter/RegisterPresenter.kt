@@ -94,7 +94,7 @@ class RegisterPresenter(registerInteractor: RegisterInteractor, registerViewMode
     }
 
     override fun checkRegisterPasswordMatch(password: String, repeatPassword: String): Boolean {
-        return password === repeatPassword
+        return password !== repeatPassword
     }
 
     override fun registerWithEmailAndPassword(user: User, password: String) {
