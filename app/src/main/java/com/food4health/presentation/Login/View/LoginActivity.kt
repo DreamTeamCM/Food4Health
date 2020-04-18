@@ -51,10 +51,12 @@ class LoginActivity : BaseActivity(), LoginContract.LoginView {
 
     override fun showLoginProgressBar() {
         login_progressBar.visibility = View.VISIBLE
+        login_progressBar.smoothToShow()
     }
 
     override fun hideLoginProgressBar() {
         login_progressBar.visibility = View.INVISIBLE
+        login_progressBar.smoothToHide()
     }
 
     override fun enableLoginButton() {

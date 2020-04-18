@@ -130,24 +130,32 @@
                     android:hint="@string/FRH_REPEAT_PASSWORD"
                     android:inputType="textPassword" />
 
-                <ProgressBar
-                    android:id="@+id/register_progressBar"
-                    style="?android:attr/progressBarStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginTop="15dp"
-                    android:visibility="invisible"/>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal">
-                    <Button
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:id="@+id/register_progressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/AVLoadingIndicatorView.Large"
+                        android:visibility="invisible"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        app:indicatorName="PacmanIndicator"
+                        app:indicatorColor="@color/colorPrimary"
+                        />
+                    <com.beardedhen.androidbootstrap.BootstrapButton
                         android:id="@+id/register_button"
                         android:layout_width="250dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/BTN_REGISTER" />
+                        android:layout_height="50dp"
+                        android:text="@string/BTN_REGISTER"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:buttonMode="regular"
+                        app:showOutline="false"
+                        app:roundedCorners="true" />
                 </LinearLayout>
 
 

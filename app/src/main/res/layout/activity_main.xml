@@ -33,31 +33,33 @@
                 android:orientation="vertical"
                 android:padding="25dp">
 
-                <ProgressBar
-                    android:id="@+id/login_progressBar"
-                    style="?android:attr/progressBarStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="40dp"
-                    android:layout_marginTop="40dp"
-                    android:visibility="invisible"/>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:orientation="vertical">
-                    <Button
+                    android:orientation="vertical"
+                    android:layout_marginTop="100dp">
+                    <com.beardedhen.androidbootstrap.BootstrapButton
                         android:id="@+id/main_login_button"
                         android:layout_width="250dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="40dp"
-                        android:text="@string/BTN_LOGIN" />
-                    <Button
+                        android:layout_height="50dp"
+                        android:text="@string/BTN_LOGIN"
+                        android:layout_marginBottom="20dp"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:buttonMode="regular"
+                        app:showOutline="false"
+                        app:roundedCorners="true" />
+                    <com.beardedhen.androidbootstrap.BootstrapButton
                         android:id="@+id/main_register_button"
                         android:layout_width="250dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/BTN_REGISTER" />
+                        android:layout_height="50dp"
+                        android:text="@string/BTN_REGISTER"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:buttonMode="regular"
+                        app:showOutline="false"
+                        app:roundedCorners="true" />
                 </LinearLayout>
 
 

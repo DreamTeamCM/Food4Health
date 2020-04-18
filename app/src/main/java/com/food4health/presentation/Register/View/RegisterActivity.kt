@@ -11,6 +11,7 @@ import com.food4health.presentation.Register.Model.RegisterViewModelImpl
 import com.food4health.presentation.Register.Presenter.RegisterPresenter
 import com.food4health.presentation.Register.RegisterContract
 import com.sinergia.food4health.R
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : BaseActivity(), RegisterContract.RegisterView {
@@ -47,11 +48,13 @@ class RegisterActivity : BaseActivity(), RegisterContract.RegisterView {
     }
 
     override fun showRegisterProgressBar() {
-        register_progressBar.visibility = View.VISIBLE
+        login_progressBar.visibility = View.VISIBLE
+        login_progressBar.smoothToShow()
     }
 
     override fun hideRegisterProgressBar() {
-        register_progressBar.visibility = View.INVISIBLE
+        login_progressBar.visibility = View.INVISIBLE
+        login_progressBar.smoothToHide()
     }
 
     override fun enableRegisterButton() {

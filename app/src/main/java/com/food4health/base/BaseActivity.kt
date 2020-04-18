@@ -7,6 +7,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import com.beardedhen.androidbootstrap.TypefaceProvider
 
 abstract class BaseActivity: AppCompatActivity() {
 
@@ -19,6 +20,7 @@ abstract class BaseActivity: AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(getLayout())
+        TypefaceProvider.registerDefaultIconSets();
     }
 
     @LayoutRes
