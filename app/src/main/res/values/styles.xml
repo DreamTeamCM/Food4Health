@@ -7,8 +7,6 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <item name="fontFamily">@</item>
-
         <!-- Text Styles -->
         <item name="android:textColor">@color/colorBlue</item>
     </style>
