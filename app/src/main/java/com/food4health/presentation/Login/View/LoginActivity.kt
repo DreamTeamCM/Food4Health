@@ -9,6 +9,7 @@ import com.food4health.domain.Interactors.Login.LoginInteractorImpl
 import com.food4health.presentation.Login.LoginContract
 import com.food4health.presentation.Login.Presenter.LoginPresenter
 import com.food4health.presentation.Main.View.MainActivity
+import com.food4health.presentation.MainMenu.View.MainMenuActivity
 import com.sinergia.food4health.R
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -70,7 +71,7 @@ class LoginActivity : BaseActivity(), LoginContract.LoginView {
     }
 
     override fun navigateToMenu() {
-        val menuIntent = Intent(this, MainActivity::class.java)
+        val menuIntent = Intent(this, MainMenuActivity::class.java)
         menuIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(menuIntent)
     }

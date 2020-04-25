@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/orange_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.food4health.presentation.Register.View.RegisterActivity"
@@ -46,7 +47,7 @@
                     android:layout_marginBottom="10dp"
                     android:ems="10"
                     android:hint="@string/FRH_NAME"
-                    android:inputType="text" />
+                    android:inputType="textCapWords" />
 
                 <TextView
                     android:id="@+id/register_userFirstLastName_aux"
@@ -61,7 +62,7 @@
                     android:layout_marginBottom="10dp"
                     android:ems="10"
                     android:hint="@string/FRH_LASTNAME1"
-                    android:inputType="text" />
+                    android:inputType="textCapWords" />
 
                 <TextView
                     android:id="@+id/register_userSecondLastName_aux"
@@ -76,7 +77,7 @@
                     android:layout_marginBottom="10dp"
                     android:ems="10"
                     android:hint="@string/FRH_LASTNAME2"
-                    android:inputType="text" />
+                    android:inputType="textCapWords" />
 
                 <TextView
                     android:id="@+id/register_userNIF_aux"
@@ -144,7 +145,7 @@
                         android:layout_marginBottom="15dp"
                         android:layout_marginTop="15dp"
                         app:indicatorName="PacmanIndicator"
-                        app:indicatorColor="@color/colorPrimary"
+                        app:indicatorColor="@color/colorBlue"
                         />
                     <com.beardedhen.androidbootstrap.BootstrapButton
                         android:id="@+id/register_button"

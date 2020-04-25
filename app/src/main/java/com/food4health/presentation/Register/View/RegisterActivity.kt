@@ -48,13 +48,13 @@ class RegisterActivity : BaseActivity(), RegisterContract.RegisterView {
     }
 
     override fun showRegisterProgressBar() {
-        login_progressBar.visibility = View.VISIBLE
-        login_progressBar.smoothToShow()
+        register_progressBar.visibility = View.VISIBLE
+        register_progressBar.smoothToShow()
     }
 
     override fun hideRegisterProgressBar() {
-        login_progressBar.visibility = View.INVISIBLE
-        login_progressBar.smoothToHide()
+        register_progressBar.visibility = View.INVISIBLE
+        register_progressBar.smoothToHide()
     }
 
     override fun enableRegisterButton() {
