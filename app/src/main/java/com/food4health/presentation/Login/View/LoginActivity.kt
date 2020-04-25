@@ -7,6 +7,7 @@ import android.view.View
 import com.food4health.base.BaseActivity
 import com.food4health.domain.Interactors.Login.LoginInteractorImpl
 import com.food4health.presentation.Login.LoginContract
+import com.food4health.presentation.Login.Model.LoginViewModelImpl
 import com.food4health.presentation.Login.Presenter.LoginPresenter
 import com.food4health.presentation.Main.View.MainActivity
 import com.food4health.presentation.MainMenu.View.MainMenuActivity
@@ -22,7 +23,7 @@ class LoginActivity : BaseActivity(), LoginContract.LoginView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        loginPresenter = LoginPresenter(LoginInteractorImpl())
+        loginPresenter = LoginPresenter(LoginInteractorImpl(), LoginViewModelImpl())
         loginPresenter.attachView(this)
         login_button.setOnClickListener { login() }
     }
@@ -52,12 +53,10 @@ class LoginActivity : BaseActivity(), LoginContract.LoginView {
 
     override fun showLoginProgressBar() {
         login_progressBar.visibility = View.VISIBLE
-        login_progressBar.smoothToShow()
     }
 
     override fun hideLoginProgressBar() {
         login_progressBar.visibility = View.INVISIBLE
-        login_progressBar.smoothToHide()
     }
 
     override fun enableLoginButton() {

@@ -1,9 +1,11 @@
 package com.food4health.presentation.Login.Presenter
 
 import android.util.Log
+import com.food4health.Food4Health
 import com.food4health.base.Exceptions.FirebaseLoginException
 import com.food4health.domain.Interactors.Login.LoginInteractor
 import com.food4health.presentation.Login.LoginContract
+import com.food4health.presentation.Login.Model.LoginViewModel
 import com.sinergia.food4health.R
 import com.squareup.okhttp.Dispatcher
 import kotlinx.coroutines.CoroutineScope
@@ -12,19 +14,21 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
-class LoginPresenter (loginInteractor: LoginInteractor): LoginContract.LoginPresenter, CoroutineScope {
+class LoginPresenter (loginInteractor: LoginInteractor, loginViewModel: LoginViewModel): LoginContract.LoginPresenter, CoroutineScope {
 
     private val TAG = "[LOGIN_ACTIVITY]"
     private val loginJob = Job()
 
     var view : LoginContract.LoginView ?= null
     var loginInteractor : LoginInteractor ?= null
+    var loginViewModel : LoginViewModel ?= null
 
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.Main + loginJob
 
     init {
         this.loginInteractor = loginInteractor
+        this.loginViewModel = loginViewModel
     }
 
     override fun attachView(view: LoginContract.LoginView) {
@@ -62,6 +66,7 @@ class LoginPresenter (loginInteractor: LoginInteractor): LoginContract.LoginPres
             view?.disableLoginButton()
             try {
                 loginInteractor?.login(email, password)
+                Food4Health.currentUser = loginViewModel?.getCurrentUser(email)!!
                 Log.d(TAG, "Successfully Login with email $email")
                 if (isViewAttached()){
                     view?.hideLoginProgressBar()

@@ -1,17 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/orange_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.food4health.presentation.MainMenu.View.MainMenuActivity"
-    android:orientation="vertical">
+    android:background="@drawable/orange_background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.food4health.presentation.MainMenu.View.MainMenuActivity">
 
     <include
         layout="@layout/layout_headder_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
-</LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="25dp">
+
+            <LinearLayout
+                android:id="@+id/menu_catalog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="25dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/style_menu_buttons">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="25dp"
+                    android:src="@drawable/f4h_logo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/MN_CATALOGUE"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menu_favourites"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="25dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/style_menu_buttons">>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="25dp"
+                    android:src="@drawable/f4h_logo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/MN_FAVOURITES"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menu_uploadRecipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="25dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/style_menu_buttons">>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="25dp"
+                    android:src="@drawable/f4h_logo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/MN_UPLOAD_RECIPE"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menu_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="25dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/style_menu_buttons">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="25dp"
+                    android:src="@drawable/f4h_logo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/MN_ACCOUNT"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

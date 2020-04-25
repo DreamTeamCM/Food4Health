@@ -1,7 +1,9 @@
 package com.food4health.data.DataBase
 
 import com.food4health.base.Exceptions.FirebaseAddUserException
+import com.food4health.base.Exceptions.GetUserException
 import com.food4health.data.Model.User
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
@@ -38,6 +40,27 @@ class Food4Health_DataBase {
                     )
                 }
 
+            }
+
+    }
+
+    suspend fun getUser(email: String): User = suspendCancellableCoroutine {    getUserContinuation ->
+
+        f4hDB
+            .collection("users")
+            .document(email)
+            .get()
+            .addOnCompleteListener { getUser ->
+
+                if(getUser.isSuccessful){
+                    val currentUser = getUser.getResult()!!.toObject(User::class.java)
+                    getUserContinuation.resume(currentUser!!)
+
+                } else {
+                    getUserContinuation.resumeWithException(
+                        GetUserException(getUser.exception?.message.toString())
+                    )
+                }
             }
 
     }

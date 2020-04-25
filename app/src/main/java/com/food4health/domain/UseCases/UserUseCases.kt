@@ -11,4 +11,8 @@ class UserUseCases {
         return f4hDB.addUser(user)
     }
 
+    suspend fun getUser(email:String):User{
+        return f4hDB.getUser(email)
+    }
+
 }

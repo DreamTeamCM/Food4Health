@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">Food4Health</string>
 
+    <string name ="SYS_DEVELOP">Zona en desarrollo: Estamos trabajando en ello...</string>
     <!-- PAGE NAME STRINGS -->
     <string name="PG_MAINPAGE">PÁGINA PRINCIPAL</string>
     <string name="PG_REGISTER">REGISTRO</string>
     <string name="PG_LOGIN">LOGIN</string>
+    <string name="PG_MAINMENU">MENÚ</string>
 
     <!-- FORMS STRINGS -->
     <string name="FR_NAME">Nombre:</string>
@@ -23,12 +25,17 @@
     <string name="FRH_PASSWORD">Contraseña del Usuario</string>
     <string name="FRH_REPEAT_PASSWORD">Repite Contraseña del Usuario</string>
 
+    <!-- MENU STRINGS -->
+    <string name="MN_CATALOGUE">CATÁLOGO</string>
+    <string name="MN_FAVOURITES">FAVORITOS</string>
+    <string name="MN_UPLOAD_RECIPE">SUBIR RECETA</string>
+    <string name="MN_ACCOUNT">MI CUENTA</string>
+
     <!-- BUTTONS STRINGS -->
     <string name="BTN_ACCEPT">ACEPTAR</string>
     <string name="BTN_CANCEL">CANCELAR</string>
     <string name="BTN_LOGIN">ENTRAR</string>
     <string name="BTN_REGISTER">REGISTARSE</string>
-
 
     <!-- ERROR MESSAGES -->
     <string name="ERR_REGISTER_FAILURE">No se ha podido completar el registro, por favor, inténtelo más tarde.</string>
