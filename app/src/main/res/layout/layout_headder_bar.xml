@@ -8,7 +8,7 @@
     android:background="@drawable/headder_bar_background">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/headder_bar_menu_btn"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/menu_icon"
