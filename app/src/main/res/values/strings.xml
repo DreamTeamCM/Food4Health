@@ -1,12 +1,19 @@
 <resources>
     <string name="app_name">Food4Health</string>
 
-    <string name ="SYS_DEVELOP">Zona en desarrollo: Estamos trabajando en ello...</string>
+    <string name="SYS_DEVELOP">Zona en desarrollo: Estamos trabajando en ello...</string>
+
     <!-- PAGE NAME STRINGS -->
-    <string name="PG_MAINPAGE">PÁGINA PRINCIPAL</string>
-    <string name="PG_REGISTER">REGISTRO</string>
-    <string name="PG_LOGIN">LOGIN</string>
-    <string name="PG_MAINMENU">MENÚ</string>
+    <string name="PG_MAINPAGE">Página Principal</string>
+    <string name="PG_REGISTER">Registro</string>
+    <string name="PG_LOGIN">Ingreso</string>
+    <string name="PG_MAINMENU">Menú</string>
+    <string name="PG_ADDRECIPE">Nueva Receta</string>
+    <string name="PG_CATALOG">Catálogo de Recetas</string>
+    <string name="PG_SETRECIPE">Modificar Receta</string>
+    <string name="PG_FAVOURITES">Recetas favoritas</string>
+    <string name="PG_MYRECIPES">Mis Recetas</string>
+
 
     <!-- FORMS STRINGS -->
     <string name="FR_NAME">Nombre:</string>
@@ -15,6 +22,13 @@
     <string name="FR_NIF">NIF:</string>
     <string name="FR_EMAIL">Correo Electrónico:</string>
     <string name="FR_PASSWORD">Contraseña:</string>
+    <string name="FR_RECIPENAME">Nombre:</string>
+    <string name="FR_DESCRIPTION">Descripción:</string>
+    <string name="FR_INGREDIENTS">Ingredientes:</string>
+    <string name="FR_ADDINGREDIENT">AÑADIR OTRO IGREDIENTE</string>
+    <string name="FR_PREPARATION">Preparación:</string>
+    <string name="FR_ADDSTEP">AÑADIR OTRO PASO</string>
+    <string name="FR_SUGGESTION">Sugerencias:</string>
 
     <!-- FORMS HINT STRINGS -->
     <string name="FRH_NAME">Nombre de Usuario</string>
@@ -24,6 +38,11 @@
     <string name="FRH_EMAIL">Correo Electrónico del Usuario</string>
     <string name="FRH_PASSWORD">Contraseña del Usuario</string>
     <string name="FRH_REPEAT_PASSWORD">Repite Contraseña del Usuario</string>
+    <string name="FRH_RECIPENAME">Nombre de la Receta</string>
+    <string name="FRH_DESCRIPTION">Descripción de la Receta</string>
+    <string name="FRH_INGREDIENTS">Ingrediente</string>
+    <string name="FRH_PREPARATION">Paso</string>
+    <string name="FRH_SUGGESTION">Sugerencias del creador</string>
 
     <!-- MENU STRINGS -->
     <string name="MN_CATALOGUE">CATÁLOGO</string>
@@ -36,9 +55,16 @@
     <string name="BTN_CANCEL">CANCELAR</string>
     <string name="BTN_LOGIN">ENTRAR</string>
     <string name="BTN_REGISTER">REGISTARSE</string>
+    <string name="BTN_ADDRECIPE">AÑADIR</string>
+    <string name="BTN_SETRECIPE">MODIFICAR</string>
+    <string name="BTN_DELETERECIPE">BORRAR</string>
 
     <!-- ERROR MESSAGES -->
     <string name="ERR_REGISTER_FAILURE">No se ha podido completar el registro, por favor, inténtelo más tarde.</string>
+    <string name="ERR_ADDRECIPE_FAILURE">No se ha podido subir la receta, por favor, inténtelo más tarde.</string>
     <string name="ERR_LOGIN_FAILURE">No se ha podido iniciar sesión, por favor, revisa tus datos e inténtelo de nuevo.</string>
+
+    <!-- APP MESSAGES MESSAGES -->
+    <string name="MSG_ADDRECIPE_SUCCESS">¡¡ La receta se ha subido con éxito !!.</string>
 
 </resources>
