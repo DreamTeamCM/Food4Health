@@ -18,6 +18,22 @@ interface CatalogContract {
 
     }
 
+    interface ItemCatalogView{
+
+        fun showError(error: Int)
+        fun showMessage(message: Int)
+        fun showItemCatalogProgressBar()
+        fun hideItemCatalogProgressBar()
+        fun showItemCatalogContent()
+        fun hideItemCatalogContent()
+        fun showItemCatalogButtons()
+        fun hideItemCatalogContentButtons()
+
+        fun getRecipe()
+        fun initInitCatalogContent(recipe: Recipe)
+
+    }
+
     interface CatalogPresenter{
 
         fun attachView(view: CatalogContract.CatalogView)
@@ -25,6 +41,16 @@ interface CatalogContract {
         fun isViewAttached(): Boolean
 
         fun getAllRecipes()
+
+    }
+
+    interface ItemCatalogPresenter {
+
+        fun attachView(view: CatalogContract.ItemCatalogView)
+        fun dettachView()
+        fun isViewAttached(): Boolean
+
+        fun getItemCatalog(id: String)
 
     }
 

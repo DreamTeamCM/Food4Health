@@ -3,7 +3,9 @@ package com.food4health.presentation.Catalog.View
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import com.food4health.Food4Health
 import com.food4health.base.BaseActivity
 import com.food4health.base.Utils.CreateCards
 import com.food4health.data.Model.Recipe
@@ -45,7 +47,7 @@ class CatalogActivity : BaseActivity(), CatalogContract.CatalogView {
         return getString(R.string.PG_CATALOG)
     }
 
-    // VIEW MOETHODS
+    // VIEW METHODS
     override fun showError(error: Int) {
         toastL(this, getString(error))
     }
@@ -78,8 +80,14 @@ class CatalogActivity : BaseActivity(), CatalogContract.CatalogView {
 
         for(recipe in recipes){
             val recipeCard = createCards.createRecipeCard(this, recipe)
+            recipeCard.setOnClickListener {
+                Food4Health.currentRecipe = recipe
+                Log.d("AAAAAAAAAAAAAAAAAA", recipe.toString())
+                startActivity(Intent(this, ItemCatalogActivity::class.java))
+            }
             catalog_content.addView(recipeCard)
         }
 
     }
+
 }

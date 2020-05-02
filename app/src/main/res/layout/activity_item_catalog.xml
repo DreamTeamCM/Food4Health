@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/orange_background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.food4health.presentation.Catalog.View.ItemCatalogActivity">
+
+    <include
+        layout="@layout/layout_headder_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/item_catalog_progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/AVLoadingIndicatorView.Large"
+                android:visibility="gone"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                app:indicatorName="PacmanIndicator"
+                app:indicatorColor="@color/colorBlue" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/f4h_logo"
+                    android:layout_marginBottom="20dp" />
+
+                <LinearLayout
+                    android:id="@+id/item_catalog_recipeContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="left"
+                    android:padding="20dp" >
+
+                    <TextView
+                        android:id="@+id/item_catalog_recipeContent_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="NOMBRE RECETA"
+                        android:textAlignment="center"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_catalog_recipeContent_description_aux"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="DESCIPCIÓN: "
+                        android:textAlignment="viewStart"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/item_catalog_recipeContent_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Descripción de la receta"/>
+
+                    <TextView
+                        android:id="@+id/item_catalog_recipeContent_ingredients_aux"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="INGREDIENTES: "
+                        android:textAlignment="viewStart"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/item_catalog_recipeContent_ingredients"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Ingredientes de la receta"/>
+
+                    <TextView
+                        android:id="@+id/item_catalog_recipeContent_preparation_aux"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="PREPARACIÓN: "
+                        android:textAlignment="viewStart"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/item_catalog_recipeContent_preparation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Preparación de la receta"/>
+
+                    <TextView
+                        android:id="@+id/item_catalog_recipeContent_suggestions_aux"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="EL AUTOR SUGIERE: "
+                        android:textAlignment="viewStart"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/item_catalog_recipeContent_suggestions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp"
+                        android:text="Preparación de la receta"/>
+
+                    <TextView
+                        android:id="@+id/item_catalog_recipeContent_owner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="textEnd"
+                        android:text="Autor"/>
+                    <TextView
+                        android:id="@+id/item_catalog_recipeContent_publicationDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp"
+                        android:textAlignment="textEnd"
+                        android:text="Fecha de Publicación"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/item_catalog_recipeButtons"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <com.beardedhen.androidbootstrap.BootstrapButton
+                        android:id="@+id/item_catalog_setRecipe_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="@string/BTN_SETRECIPE"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:buttonMode="regular"
+                        app:showOutline="false"
+                        app:roundedCorners="true"
+                        android:layout_margin="10dp"/>
+
+                    <com.beardedhen.androidbootstrap.BootstrapButton
+                        android:id="@+id/item_catalog_deleteRecipe_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="@string/BTN_DELETERECIPE"
+                        app:bootstrapBrand="danger"
+                        app:bootstrapSize="lg"
+                        app:buttonMode="regular"
+                        app:showOutline="false"
+                        app:roundedCorners="true"
+                        android:layout_margin="10dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

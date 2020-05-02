@@ -62,6 +62,7 @@
     <!-- ERROR MESSAGES -->
     <string name="ERR_REGISTER_FAILURE">No se ha podido completar el registro, por favor, inténtelo más tarde.</string>
     <string name="ERR_ADDRECIPE_FAILURE">No se ha podido subir la receta, por favor, inténtelo más tarde.</string>
+    <string name="ERR_GETRECIPE_FAILURE">No se han podido rescatar los recursos, inténtelo más tarde.</string>
     <string name="ERR_LOGIN_FAILURE">No se ha podido iniciar sesión, por favor, revisa tus datos e inténtelo de nuevo.</string>
 
     <!-- APP MESSAGES MESSAGES -->

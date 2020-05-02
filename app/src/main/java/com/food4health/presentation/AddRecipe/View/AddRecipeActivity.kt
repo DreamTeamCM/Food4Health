@@ -115,7 +115,7 @@ class AddRecipeActivity : BaseActivity(), AddRecipeContract.AddRecipeView {
         for(index in 0 until recipePreparation.childCount){
             if(recipePreparation.getChildAt(index) is EditText){
                 val inputStep = recipePreparation.getChildAt(index) as EditText
-                if(!inputStep.text.toString().isNullOrEmpty()) recipePreparationMap[index.toString()] = inputStep.text.toString()
+                if(!inputStep.text.toString().isNullOrEmpty()) recipePreparationMap[(index+1).toString()] = inputStep.text.toString()
             }
         }
         recipePreparationMap.toMap()
@@ -127,6 +127,7 @@ class AddRecipeActivity : BaseActivity(), AddRecipeContract.AddRecipeView {
             recipePreparationMap,
             recipeSuggestions,
             Food4Health.currentUser.email,
+            "${Food4Health.currentUser.name} ${Food4Health.currentUser.firstLastName}",
             LocalDateTime.now().toString()
         )
 

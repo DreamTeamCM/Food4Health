@@ -68,7 +68,7 @@ class CatalogPresenter(catalogViewModel: CatalogViewModel): CatalogContract.Cata
 
                 if(isViewAttached()){
                     view?.hideCatalogProgressBar()
-                    view?.showError(R.string.ERR_REGISTER_FAILURE)
+                    view?.showError(R.string.ERR_GETRECIPE_FAILURE)
                 }
 
                 Log.d(TAG, "ERROR!: Cannot get all recipes from Firebase. Error Message --> ${error.message}.")

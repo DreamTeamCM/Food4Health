@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.food4health.presentation.Catalog.View.CatalogActivity"></activity>
+        <activity android:name="com.food4health.presentation.Catalog.View.ItemCatalogActivity"></activity>
+        <activity android:name="com.food4health.presentation.Catalog.View.CatalogActivity" />
         <activity android:name="com.food4health.presentation.AddRecipe.View.AddRecipeActivity" />
         <activity android:name="com.food4health.presentation.MainMenu.View.MainMenuActivity" />
         <activity android:name="com.food4health.presentation.Login.View.LoginActivity" />

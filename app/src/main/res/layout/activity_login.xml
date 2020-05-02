@@ -64,17 +64,6 @@
                     android:hint="@string/FRH_PASSWORD"
                     android:inputType="textPassword" />
 
-                <!--<ProgressBar
-                    android:id="@+id/login_progressBar"
-                    style="?android:attr/progressBarStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginTop="15dp"
-                    android:visibility="invisible"/>-->
-
-
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -104,12 +93,6 @@
                         app:showOutline="false"
                         app:roundedCorners="true"
                     />
-
-                    <!--<Button
-                        android:id="@+id/login_button"
-                        android:layout_width="250dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/BTN_LOGIN" />-->
 
                 </LinearLayout>
 

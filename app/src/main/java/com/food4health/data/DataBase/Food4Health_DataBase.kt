@@ -80,6 +80,7 @@ class Food4Health_DataBase {
 
                     for(recipe in getAllRecipes.getResult()!!){
                         var inputRecipe = recipe.toObject(Recipe::class.java)
+                        inputRecipe.id = recipe.id
                         recipesList.add(inputRecipe)
                     }
 
@@ -110,6 +111,7 @@ class Food4Health_DataBase {
                 if(getRecipe.isSuccessful){
 
                     var recipe = getRecipe.getResult()!!.toObject(Recipe::class.java)!!
+                    recipe.id = getRecipe.getResult()!!.id
                     getRecipeContinuation.resume(recipe)
 
                 } else {
@@ -128,9 +130,22 @@ class Food4Health_DataBase {
 
     suspend fun addRecipe(newRecipe: Recipe): Unit = suspendCancellableCoroutine { addRecipeContinuation ->
 
+        val newRecipeDB: HashMap<String, Any> = hashMapOf(
+            "name" to newRecipe.name,
+            "description" to newRecipe.description,
+            "ingredients" to newRecipe.ingredients,
+            "preparation" to newRecipe.preparation,
+            "suggestions" to newRecipe.suggestions,
+            "ownerMail" to newRecipe.ownerMail,
+            "ownerName" to newRecipe.ownerName,
+            "uploadDate" to newRecipe.uploadDate,
+            "image" to newRecipe.image,
+            "likes" to newRecipe.likes
+        )
+
         f4hDB
             .collection("recipes")
-            .add(newRecipe)
+            .add(newRecipeDB)
             .addOnCompleteListener { addRecipe ->
 
                 if(addRecipe.isSuccessful){
