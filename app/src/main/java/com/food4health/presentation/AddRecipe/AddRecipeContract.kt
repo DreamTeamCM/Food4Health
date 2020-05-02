@@ -27,9 +27,9 @@ interface AddRecipeContract {
         fun checkEmptyAddRecipeName(name: String): Boolean
         fun checkEmptyAddRecipeDescription(description: String): Boolean
         fun checkEmptyAddRecipeIngredients(ingredients: ArrayList<String>): Boolean
-        fun checkEmptyAddRecipePreparation(preparation: Map<Integer, String>): Boolean
+        fun checkEmptyAddRecipePreparation(preparation: Map<String, String>): Boolean
         fun checkEmptyAddRecipeSuggestions(suggestions: String): Boolean
-        fun checkEmptyFields(name: String, description: String, ingredients: ArrayList<String>, preparation: Map<Integer, String>, suggestions: String): Boolean
+        fun checkEmptyFields(name: String, description: String, ingredients: ArrayList<String>, preparation: Map<String, String>, suggestions: String): Boolean
 
         fun addRecipe(newRecipe: Recipe)
 

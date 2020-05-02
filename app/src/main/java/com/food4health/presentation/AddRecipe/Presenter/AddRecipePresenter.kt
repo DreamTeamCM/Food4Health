@@ -51,7 +51,7 @@ class AddRecipePresenter(addRecipeViewModel: AddRecipeViewModel): AddRecipeContr
         return ingredients.isEmpty()
     }
 
-    override fun checkEmptyAddRecipePreparation(preparation: Map<Integer, String>): Boolean {
+    override fun checkEmptyAddRecipePreparation(preparation: Map<String, String>): Boolean {
         return preparation.isEmpty()
     }
 
@@ -63,7 +63,7 @@ class AddRecipePresenter(addRecipeViewModel: AddRecipeViewModel): AddRecipeContr
         name: String,
         description: String,
         ingredients: ArrayList<String>,
-        preparation: Map<Integer, String>,
+        preparation: Map<String, String>,
         suggestions: String
     ): Boolean {
         return (

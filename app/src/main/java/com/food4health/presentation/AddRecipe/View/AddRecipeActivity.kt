@@ -13,8 +13,10 @@ import com.food4health.data.Model.Recipe
 import com.food4health.presentation.AddRecipe.AddRecipeContract
 import com.food4health.presentation.AddRecipe.Model.AddRecipeViewModelImpl
 import com.food4health.presentation.AddRecipe.Presenter.AddRecipePresenter
+import com.food4health.presentation.MainMenu.View.MainMenuActivity
 import com.sinergia.food4health.R
 import kotlinx.android.synthetic.main.activity_add_recipe.*
+import kotlinx.android.synthetic.main.layout_headder_bar.*
 import java.time.LocalDateTime
 
 class AddRecipeActivity : BaseActivity(), AddRecipeContract.AddRecipeView {
@@ -26,6 +28,9 @@ class AddRecipeActivity : BaseActivity(), AddRecipeContract.AddRecipeView {
 
         super.onCreate(savedInstanceState)
         setContentView(getLayout())
+
+        headder_bar_pageTitle.text = getPageTitle()
+        headder_bar_menu_btn.setOnClickListener { startActivity(Intent(this, MainMenuActivity::class.java)) }
 
         addRecipePresenter = AddRecipePresenter(AddRecipeViewModelImpl())
         addRecipePresenter.attachView(this)
@@ -85,11 +90,11 @@ class AddRecipeActivity : BaseActivity(), AddRecipeContract.AddRecipeView {
             }
         }
 
-        var recipePreparationMap: MutableMap<Integer, String> = mutableMapOf()
+        var recipePreparationMap: MutableMap<String, String> = mutableMapOf()
         for(index in 0 until recipePreparation.childCount){
             if(recipePreparation.getChildAt(index) is EditText){
                 val inputStep = recipePreparation.getChildAt(index) as EditText
-                if(!inputStep.text.toString().isNullOrEmpty()) recipePreparationMap[Integer(index)] = inputStep.text.toString()
+                if(!inputStep.text.toString().isNullOrEmpty()) recipePreparationMap[index.toString()] = inputStep.text.toString()
             }
         }
         recipePreparationMap.toMap()

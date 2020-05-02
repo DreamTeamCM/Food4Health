@@ -4,9 +4,7 @@ interface MainMenuContract {
 
     interface MainMenuView{
 
-    }
-
-    interface MainMenuPresenter{
+        fun navigateToAddRecipe()
 
     }
 
