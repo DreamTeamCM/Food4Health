@@ -2,6 +2,7 @@ package com.food4health.presentation.Catalog.Presenter
 
 import android.util.Log
 import com.food4health.base.Exceptions.FirebaseGetAllRecipesException
+import com.food4health.data.Model.Recipe
 import com.food4health.presentation.Catalog.CatalogContract
 import com.food4health.presentation.Catalog.Model.CatalogViewModel
 import com.sinergia.food4health.R
@@ -14,6 +15,7 @@ import kotlin.coroutines.CoroutineContext
 class CatalogPresenter(catalogViewModel: CatalogViewModel): CatalogContract.CatalogPresenter, CoroutineScope {
 
     private val TAG = "[CATALOG_ACTIVITY]"
+    private var recipesList: List<Recipe> ?= null
     private val catalogJob = Job()
 
     var view: CatalogContract.CatalogView ?= null
@@ -50,11 +52,11 @@ class CatalogPresenter(catalogViewModel: CatalogViewModel): CatalogContract.Cata
                     view?.showCatalogProgressBar()
                 }
 
-                val recipes = catalogViewModel?.getAllRecipes()!!
-                Log.d(TAG, recipes.toString())
+                recipesList = catalogViewModel?.getAllRecipes()!!
+                Log.d(TAG, recipesList.toString())
 
                 if(isViewAttached()){
-                    view?.initCatalogContent(recipes)
+                    view?.initCatalogContent(recipesList!!)
                     view?.showCatalogContent()
                     view?.hideCatalogProgressBar()
                 }
