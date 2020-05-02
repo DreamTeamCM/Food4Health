@@ -96,15 +96,20 @@ class CreateCards {
 
         val recipeOwner = TextView(context)
         val recipeOwnerTxt = recipe.owner
-        recipeOwner.setText("Nombre: $recipeOwnerTxt.")
+        recipeOwner.setText("Propietario: $recipeOwnerTxt.")
         recipeOwner.setTextColor(ContextCompat.getColor(context, R.color.colorBlue))
         recipeDescription.addView(recipeOwner)
 
         val recipeDescript = TextView(context)
         val recipeDescriptionTxt = recipe.description
-        recipeDescript.setText("Nombre: $recipeDescriptionTxt.")
+        recipeDescript.setText("Descripción: $recipeDescriptionTxt.")
         recipeDescript.setTextColor(ContextCompat.getColor(context, R.color.colorBlue))
         recipeDescription.addView(recipeDescript)
+
+        cardContent.addView(resourceImage)
+        cardContent.addView(separator)
+        cardContent.addView(recipeDescription)
+        recipeCard.addView(cardContent)
 
         return recipeCard
 

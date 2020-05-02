@@ -13,7 +13,7 @@ import kotlin.coroutines.CoroutineContext
 
 class CatalogPresenter(catalogViewModel: CatalogViewModel): CatalogContract.CatalogPresenter, CoroutineScope {
 
-    private val TAG = "[ADDRECIPE_ACTIVITY]"
+    private val TAG = "[CATALOG_ACTIVITY]"
     private val catalogJob = Job()
 
     var view: CatalogContract.CatalogView ?= null
@@ -40,7 +40,7 @@ class CatalogPresenter(catalogViewModel: CatalogViewModel): CatalogContract.Cata
 
     override fun getAllRecipes() {
 
-        Log.d(TAG, "Trying to get all recipes.")
+        Log.d(TAG, "Trying to get all recipes from Firebase.")
 
         launch{
 
@@ -51,12 +51,15 @@ class CatalogPresenter(catalogViewModel: CatalogViewModel): CatalogContract.Cata
                 }
 
                 val recipes = catalogViewModel?.getAllRecipes()!!
+                Log.d(TAG, recipes.toString())
 
                 if(isViewAttached()){
                     view?.initCatalogContent(recipes)
                     view?.showCatalogContent()
                     view?.hideCatalogProgressBar()
                 }
+
+                Log.d(TAG, "Successfully get all recipes from Firebase.")
 
 
             } catch (error: FirebaseGetAllRecipesException){
