@@ -53,7 +53,6 @@ class CatalogPresenter(catalogViewModel: CatalogViewModel): CatalogContract.Cata
                 }
 
                 recipesList = catalogViewModel?.getAllRecipes()!!
-                Log.d(TAG, recipesList.toString())
 
                 if(isViewAttached()){
                     view?.initCatalogContent(recipesList!!)

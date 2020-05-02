@@ -82,7 +82,6 @@ class CatalogActivity : BaseActivity(), CatalogContract.CatalogView {
             val recipeCard = createCards.createRecipeCard(this, recipe)
             recipeCard.setOnClickListener {
                 Food4Health.currentRecipe = recipe
-                Log.d("AAAAAAAAAAAAAAAAAA", recipe.toString())
                 startActivity(Intent(this, ItemCatalogActivity::class.java))
             }
             catalog_content.addView(recipeCard)
