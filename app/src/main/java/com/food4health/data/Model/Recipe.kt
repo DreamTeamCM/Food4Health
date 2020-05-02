@@ -9,6 +9,7 @@ data class Recipe (
     var suggestions: String = "Desconocido",
     var owner: String = "Desconocido",
     var uploadDate: String = "Desconocido",
+    var image: String = "noImage",
     var likes: ArrayList<String> = arrayListOf(),
     var id : String = ""
 

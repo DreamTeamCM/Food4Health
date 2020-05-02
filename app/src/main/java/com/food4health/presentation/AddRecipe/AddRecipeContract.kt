@@ -13,6 +13,10 @@ interface AddRecipeContract {
         fun hideAddRecipeProgressBar()
         fun enableAddRecipeButton()
         fun disableAddRecipeButton()
+
+        fun addIngredient()
+        fun addStep()
+
         fun addRecipe()
         fun navigateToRecipe(id: String)
 

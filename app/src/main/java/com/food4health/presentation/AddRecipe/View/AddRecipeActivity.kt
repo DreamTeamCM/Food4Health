@@ -1,12 +1,14 @@
 package com.food4health.presentation.AddRecipe.View
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.core.view.children
-import androidx.core.view.iterator
+import androidx.core.view.marginBottom
 import com.food4health.Food4Health
 import com.food4health.base.BaseActivity
 import com.food4health.data.Model.Recipe
@@ -34,6 +36,9 @@ class AddRecipeActivity : BaseActivity(), AddRecipeContract.AddRecipeView {
 
         addRecipePresenter = AddRecipePresenter(AddRecipeViewModelImpl())
         addRecipePresenter.attachView(this)
+
+        addRecipe_addIngredient.setOnClickListener { addIngredient() }
+        addRecipe_addStep.setOnClickListener { addStep() }
 
         addRecipe_button.setOnClickListener { addRecipe() }
 
@@ -72,6 +77,22 @@ class AddRecipeActivity : BaseActivity(), AddRecipeContract.AddRecipeView {
     override fun disableAddRecipeButton() {
         addRecipe_button.isEnabled = false
         addRecipe_button.isClickable = false
+    }
+
+    override fun addIngredient() {
+        val ingredient = EditText(this)
+        ingredient.width = LinearLayout.LayoutParams.MATCH_PARENT
+        ingredient.height = addRecipe_principalIngredient.height
+        ingredient.hint = getString(R.string.FRH_INGREDIENTS)
+        addRecipe_ingredients.addView(ingredient)
+    }
+
+    override fun addStep() {
+        val step = EditText(this)
+        step.width = LinearLayout.LayoutParams.MATCH_PARENT
+        step.height = addRecipe_principalStep.height
+        step.hint = getString(R.string.FRH_INGREDIENTS)
+        addRecipe_preparation.addView(step)
     }
 
     override fun addRecipe() {

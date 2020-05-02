@@ -14,7 +14,7 @@ import kotlin.coroutines.CoroutineContext
 
 class AddRecipePresenter(addRecipeViewModel: AddRecipeViewModel): AddRecipeContract.AddRecipePresenter, CoroutineScope {
 
-    private val TAG = "[REGISTER_ACTIVITY]"
+    private val TAG = "[ADDRECIPE_ACTIVITY]"
     private val addRecipeJob = Job()
 
     var view: AddRecipeContract.AddRecipeView? = null

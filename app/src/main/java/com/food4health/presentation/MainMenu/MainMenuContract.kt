@@ -4,6 +4,8 @@ interface MainMenuContract {
 
     interface MainMenuView{
 
+        fun navigateToCatalog()
+
         fun navigateToAddRecipe()
 
     }
