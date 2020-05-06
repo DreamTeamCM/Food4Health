@@ -39,7 +39,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="25dp"
-                    android:src="@drawable/f4h_logo" />
+                    android:src="@drawable/catalog" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="25dp"
-                    android:src="@drawable/f4h_logo" />
+                    android:src="@drawable/favourite" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -87,7 +87,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="25dp"
-                    android:src="@drawable/f4h_logo" />
+                    android:src="@drawable/catalog_add" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -111,7 +111,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="25dp"
-                    android:src="@drawable/f4h_logo" />
+                    android:src="@drawable/my_account" />
 
                 <TextView
                     android:layout_width="match_parent"
