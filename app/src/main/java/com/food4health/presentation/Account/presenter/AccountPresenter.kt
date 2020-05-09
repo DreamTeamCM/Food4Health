@@ -20,8 +20,8 @@ class AccountPresenter(accountViewModel: AccountViewModel, accountInteractor: Ac
     val TAG = "[ACCOUNT_ACTIVITY]"
 
     var view: AccountContract.AccountView ?= null
-    var accountViewModel: AccountViewModel ?= null
-    var accountInteractor: AccountInteractor ?= null
+    private var accountViewModel: AccountViewModel ?= null
+    private var accountInteractor: AccountInteractor ?= null
 
     private val accountJob = Job()
 
@@ -204,7 +204,6 @@ class AccountPresenter(accountViewModel: AccountViewModel, accountInteractor: Ac
                 Log.d(TAG, "Cannot update avatar image to account with email ${Food4Health.currentUser.email} --> $errorMsg.")
 
             }
-
 
         }
     }

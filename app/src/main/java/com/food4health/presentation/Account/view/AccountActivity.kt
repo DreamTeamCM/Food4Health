@@ -139,7 +139,7 @@ class AccountActivity : BaseActivity(), AccountContract.AccountView {
         if(requestCode == Food4Health.GALLERY_INTENT_CODE && resultCode == Activity.RESULT_OK){
 
             var imageURI: Uri = imageData?.data!!
-            accountPresenter.uploadImage(imageURI)
+            accountPresenter.uploadUserImage(imageURI)
 
         }
     }
