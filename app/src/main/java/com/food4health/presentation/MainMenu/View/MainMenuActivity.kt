@@ -22,7 +22,7 @@ class MainMenuActivity : BaseActivity(), MainMenuContract.MainMenuView {
         headder_bar_pageTitle.text = getPageTitle()
         headder_bar_menu_btn.setOnClickListener { finish() }
 
-        menu_catalog.setOnClickListener { navigateToCatalog() }
+        menu_catalog.setOnClickListener { toastL(this, getString(R.string.SYS_DEVELOP)) }//{ navigateToCatalog() }
         menu_favourites.setOnClickListener { toastL(this, getString(R.string.SYS_DEVELOP)) }
         menu_uploadRecipe.setOnClickListener { navigateToAddRecipe() }
         menu_account.setOnClickListener { toastL(this, getString(R.string.SYS_DEVELOP)) }
