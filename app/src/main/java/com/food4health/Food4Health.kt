@@ -12,6 +12,15 @@ class Food4Health: Application() {
         var currentUser = User()
         var currentRecipe = Recipe()
 
+        var cameraPermissionGranted = false
+        var storagePermissionGranted = false
+
+        val CAMERA_PERMISSIONS_CODE = 10
+        val READ_STORAGE_PERMISSIONS_CODE = 11
+        val WRITE_STORAGE_PERMISSIONS_CODE = 12
+        val CAMERA_INTENT_CODE = 20
+        val GALLERY_INTENT_CODE = 21
+
     }
 
 }

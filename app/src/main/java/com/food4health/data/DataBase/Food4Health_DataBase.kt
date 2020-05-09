@@ -3,7 +3,6 @@ package com.food4health.data.DataBase
 import com.food4health.base.Exceptions.*
 import com.food4health.data.Model.Recipe
 import com.food4health.data.Model.User
-import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
@@ -58,11 +57,52 @@ class Food4Health_DataBase {
 
                 } else {
                     getUserContinuation.resumeWithException(
-                        GetUserException(getUser.exception?.message.toString())
+                        FirebaseGetUserException(getUser.exception?.message.toString())
                     )
                 }
             }
 
+    }
+
+    suspend fun setUser(settedUser: User): Unit = suspendCancellableCoroutine{ setUserContinuation ->
+
+        f4hDB
+            .document("users/${settedUser.email}")
+            .set(settedUser)
+            .addOnCompleteListener {setUser ->
+
+                if(setUser.isSuccessful){
+                    setUserContinuation.resume(Unit)
+                } else {
+                    setUserContinuation.resumeWithException(
+                        FirebaseSetUserException(
+                            setUser.exception?.message.toString()
+                        )
+                    )
+                }
+
+            }
+    }
+
+    suspend fun deleteUser(user: User): Unit = suspendCancellableCoroutine { deleteUserContinuation ->
+
+        f4hDB
+            .collection("users")
+            .document(user.email)
+            .delete()
+            .addOnCompleteListener { deleteUser ->
+
+                if (deleteUser.isSuccessful) {
+                    deleteUserContinuation.resume(Unit)
+                } else {
+
+                    deleteUserContinuation.resumeWithException(
+                        FirebaseDeleteUserException(deleteUser.exception?.message.toString())
+                    )
+
+                }
+
+            }
     }
 
 

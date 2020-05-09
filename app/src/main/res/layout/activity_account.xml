@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/orange_background"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context="com.food4health.presentation.Account.view.AccountActivity">
+
+    <include layout="@layout/layout_headder_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="125dp"
+                    android:layout_height="125dp"
+                    app:cardCornerRadius="20dp">
+                    <ImageView
+                        android:id="@+id/account_userAvatar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:elevation="5dp"
+                        android:src="@drawable/icon_user" />
+                </androidx.cardview.widget.CardView>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right|center_vertical"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/account_logout"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:elevation="5dp"
+                        android:src="@drawable/icon_btn_logout_black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentBottom="true">
+
+                        <TextView
+                            android:id="@+id/account_nameHead"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/FR_NAME"
+                            android:textAlignment="viewEnd"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/account_mailHead"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/FR_EMAIL"
+                            android:textAlignment="viewEnd"
+                            android:textSize="10sp"
+                            android:textStyle="italic" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/userNameExplainText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignStart="@+id/account_userName"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:text="@string/FR_NAME" />
+                <EditText
+                    android:id="@+id/account_userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:fontFamily="verdana"
+                    android:hint="@string/FRH_NAME"
+                    android:inputType="text"
+                    android:paddingStart="50dp" />
+                <ImageView
+                    android:id="@+id/account_userName_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="41dp"
+                    android:layout_alignStart="@+id/account_userName"
+                    android:layout_alignTop="@+id/account_userName"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="-2dp"
+                    android:elevation="5dp"
+                    android:src="@drawable/icon_user" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/userLastName1ExplainText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignStart="@+id/account_userLastName1"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:text="@string/FR_LASTNAME1" />
+                <EditText
+                    android:id="@+id/account_userLastName1"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:fontFamily="verdana"
+                    android:hint="@string/FRH_LASTNAME1"
+                    android:inputType="text"
+                    android:paddingStart="50dp" />
+                <ImageView
+                    android:id="@+id/account_userLastName1_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="41dp"
+                    android:layout_alignStart="@+id/account_userLastName1"
+                    android:layout_alignTop="@+id/account_userLastName1"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="-2dp"
+                    android:elevation="5dp"
+                    android:src="@drawable/icon_user" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp">
+                <EditText
+                    android:id="@+id/account_userLastName2"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="10dp"
+                    android:ems="10"
+                    android:fontFamily="verdana"
+                    android:hint="@string/FRH_LASTNAME2"
+                    android:inputType="text"
+                    android:paddingStart="50dp" />
+                <ImageView
+                    android:id="@+id/account_userLastName_icon2"
+                    android:layout_width="30dp"
+                    android:layout_height="41dp"
+                    android:layout_alignStart="@+id/account_userLastName2"
+                    android:layout_alignTop="@+id/account_userLastName2"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="-2dp"
+                    android:elevation="5dp"
+                    android:src="@drawable/icon_user" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/userMailExplainText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignStart="@+id/account_userMail"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:text="@string/FR_EMAIL"/>
+                <EditText
+                    android:id="@+id/account_userMail"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:fontFamily="verdana"
+                    android:hint="@string/FRH_EMAIL"
+                    android:inputType="text"
+                    android:paddingStart="50dp" />
+                <ImageView
+                    android:id="@+id/account_userMail_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="41dp"
+                    android:layout_alignStart="@+id/account_userMail"
+                    android:layout_alignTop="@+id/account_userMail"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="-2dp"
+                    android:elevation="5dp"
+                    android:src="@drawable/icon_mail" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/userNIFExplainText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignStart="@+id/account_userNIF"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:text="@string/FR_NIF" />
+                <EditText
+                    android:id="@+id/account_userNIF"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:fontFamily="verdana"
+                    android:hint="@string/FRH_NIF"
+                    android:inputType="text"
+                    android:paddingStart="50dp" />
+                <ImageView
+                    android:id="@+id/account_userNIF_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="41dp"
+                    android:layout_alignStart="@+id/account_userNIF"
+                    android:layout_alignTop="@+id/account_userNIF"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="-2dp"
+                    android:elevation="5dp"
+                    android:src="@drawable/icon_nif" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <!--<ImageView
+                    android:id="@+id/account_userQR"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:elevation="5dp"
+                    android:src="@drawable/icon_qr" />-->
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:id="@+id/account_progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/AVLoadingIndicatorView.Large"
+                    android:visibility="invisible"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    app:indicatorName="PacmanIndicator"
+                    app:indicatorColor="@color/colorBlue" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp">
+
+                    <com.beardedhen.androidbootstrap.BootstrapButton
+                        android:id="@+id/account_update_btn"
+                        android:layout_width="250dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="@string/BTN_SETACCOUNT"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:buttonMode="regular"
+                        app:showOutline="false"
+                        app:roundedCorners="true"
+                        android:layout_margin="10dp"
+                        />
+
+                    <com.beardedhen.androidbootstrap.BootstrapButton
+                        android:id="@+id/account_delete_btn"
+                        android:layout_width="250dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="@string/BTN_DELETEACCOUNT"
+                        app:bootstrapBrand="danger"
+                        app:bootstrapSize="lg"
+                        app:buttonMode="regular"
+                        app:showOutline="false"
+                        app:roundedCorners="true"
+                        android:layout_margin="10dp"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
