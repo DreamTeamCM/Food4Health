@@ -70,11 +70,13 @@
     <string name="ERR_UPDATEACCOUNT_FAILURE">No se ha podido actualizar tu cuenta, inténtelo más tarde.</string>
     <string name="ERR_UPDATEAVATAR_FAILURE">No se ha podido actualizar tu avatar, inténtelo más tarde.</string>
     <string name="ERR_DELETEACCOUNT_FAILURE">No se ha podido borrar tu cuenta, inténtelo más tarde.</string>
+    <string name="ERR_PERMISSION_GALLERY">No se podrá acceder al almacenamiento del dispositivo hasta que concedas todos los permisos.</string>
 
     <!-- APP MESSAGES MESSAGES -->
     <string name="MSG_ADDRECIPE_SUCCESS">¡¡ La receta se ha subido con éxito !!.</string>
     <string name="MSG_UPDATE_ACCOUNT">¡¡ Tu cuenta ha sido actualizada correctamente !!.</string>
     <string name="MSG_UPDATE_AVATAR">¡¡ Tu avatar ha sido actualizado correctamente !!.</string>
     <string name="MSG_DELETE_ACCOUNT">¡¡ Tu cuenta ha sido eliminada permanentemente !!.</string>
+    <string name="MSG_PERMISSION_GALLERY_REQUEST">Por favor permite que la app acceda al almacenamiento del dispositivo.</string>
 
 </resources>

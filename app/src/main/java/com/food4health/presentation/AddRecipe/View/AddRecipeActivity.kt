@@ -84,6 +84,7 @@ class AddRecipeActivity : BaseActivity(), AddRecipeContract.AddRecipeView {
         ingredient.width = LinearLayout.LayoutParams.MATCH_PARENT
         ingredient.height = addRecipe_principalIngredient.height
         ingredient.hint = getString(R.string.FRH_INGREDIENTS)
+        ingredient.inputType = addRecipe_principalIngredient.inputType
         addRecipe_ingredients.addView(ingredient)
     }
 
@@ -91,7 +92,8 @@ class AddRecipeActivity : BaseActivity(), AddRecipeContract.AddRecipeView {
         val step = EditText(this)
         step.width = LinearLayout.LayoutParams.MATCH_PARENT
         step.height = addRecipe_principalStep.height
-        step.hint = getString(R.string.FRH_INGREDIENTS)
+        step.hint = getString(R.string.FRH_PREPARATION)
+        step.inputType = addRecipe_principalStep.inputType
         addRecipe_preparation.addView(step)
     }
 

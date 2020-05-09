@@ -10,8 +10,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
 import com.food4health.Food4Health
 import com.food4health.base.BaseActivity
+import com.food4health.data.Model.User
 import com.food4health.presentation.Account.AccountContract
 import com.food4health.presentation.Account.model.AccountViewModel
 import com.food4health.presentation.Account.model.AccountViewModelImpl
@@ -85,7 +87,27 @@ class AccountActivity : BaseActivity(), AccountContract.AccountView {
     }
 
     override fun initAccountContent() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+        val currentUser = Food4Health.currentUser
+
+        if(currentUser.avatar != "SinAvatar"){
+            Glide
+                .with(this)
+                .load(Uri.parse(currentUser.avatar))
+                .fitCenter()
+                .centerCrop()
+                .into(account_userAvatar)
+        }
+
+        account_nameHead.text = "${currentUser.name} ${Food4Health.currentUser.firstLastName}"
+        account_mailHead.text = currentUser.email
+
+        account_userName.setText(currentUser.name)
+        account_userLastName1.setText(currentUser.firstLastName)
+        account_userLastName2.setText(currentUser.secondLastName)
+        account_userMail.setText(currentUser.email)
+        account_userNIF.setText(currentUser.nif)
+
     }
 
     override fun logOut() {
@@ -93,11 +115,28 @@ class AccountActivity : BaseActivity(), AccountContract.AccountView {
     }
 
     override fun updateAccount() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        var newName = account_userName.text.toString()
+        var newLastName1 = account_userLastName1.text.toString()
+        var newLastName2 = account_userLastName2.text.toString()
+        var newEmail = account_userMail.text.toString()
+        var newNIF = account_userNIF.text.toString()
+
+        var newUserAccount = User(
+            newName,
+            newLastName1,
+            newLastName2,
+            newNIF,
+            newEmail,
+            Food4Health.currentUser.avatar
+        )
+
+        accountPresenter.updateAccount(newUserAccount)
     }
 
     override fun deleteAccount() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+        accountPresenter.deleteAccount(Food4Health.currentUser)
+
     }
 
     override fun navigateToMainPage() {
@@ -127,7 +166,7 @@ class AccountActivity : BaseActivity(), AccountContract.AccountView {
             galleryIntent.type = "image/*"
             startActivityForResult(galleryIntent, Food4Health.GALLERY_INTENT_CODE)
         } else {
-            toastL(this, "Por favor permite que la app acceda al almacenamiento del dispositivo.")
+            toastL(this, getString(R.string.MSG_PERMISSION_GALLERY_REQUEST))
             checkAndSetGalleryPermissions()
         }
     }
@@ -153,7 +192,7 @@ class AccountActivity : BaseActivity(), AccountContract.AccountView {
                                     ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
                             )
                 } else {
-                    toastL(this, "No se podrá acceder al almacenamiento del dispositivo hasta que concedas todos los permisos.")
+                    toastL(this, getString(R.string.ERR_PERMISSION_GALLERY))
                 }
             Food4Health.WRITE_STORAGE_PERMISSIONS_CODE ->
                 if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -162,7 +201,7 @@ class AccountActivity : BaseActivity(), AccountContract.AccountView {
                                     ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
                             )
                 } else {
-                    toastL(this, "No se podrá acceder al almacenamiento del dispositivo hasta que concedas todos los permisos.")
+                    toastL(this, getString(R.string.ERR_PERMISSION_GALLERY))
                 }
         }
     }

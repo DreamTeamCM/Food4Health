@@ -7,6 +7,6 @@ data class User (
     var secondLastName: String = "Desconocido",
     var nif: String = "Desconocido",
     var email: String = "Desconocido",
-    var avatar: String = "sinAvatar"
+    var avatar: String = "SinAvatar"
 
 )
