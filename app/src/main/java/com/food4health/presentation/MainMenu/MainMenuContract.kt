@@ -8,6 +8,10 @@ interface MainMenuContract {
 
         fun navigateToAddRecipe()
 
+        fun navigateToAccount()
+
+        fun navigateToFavourites()
+
     }
 
 }

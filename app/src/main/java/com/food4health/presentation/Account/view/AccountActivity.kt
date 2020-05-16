@@ -43,6 +43,10 @@ class AccountActivity : BaseActivity(), AccountContract.AccountView {
         headder_bar_pageTitle.text = getPageTitle()
         headder_bar_menu_btn.setOnClickListener { startActivity(Intent(this, MainMenuActivity::class.java)) }
 
+        account_userAvatar.setOnClickListener { uploadGalleryImage() }
+        account_logout.setOnClickListener { logOut() }
+        initAccountContent()
+
     }
 
     override fun getLayout(): Int {
