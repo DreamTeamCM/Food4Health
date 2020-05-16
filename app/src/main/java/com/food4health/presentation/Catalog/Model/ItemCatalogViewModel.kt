@@ -6,4 +6,6 @@ interface ItemCatalogViewModel {
 
     suspend fun getItemCatalog(id: String): Recipe
 
+    suspend fun deleteRecipe(recipe: Recipe)
+
 }

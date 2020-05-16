@@ -12,5 +12,9 @@ class ItemCatalogViewModelImpl: ViewModel(), ItemCatalogViewModel {
         return recipeUseCases.getRecipe(id)
     }
 
+    override suspend fun deleteRecipe(recipe: Recipe) {
+        return recipeUseCases.deleteRecipe(recipe)
+    }
+
 
 }

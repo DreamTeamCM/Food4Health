@@ -7,6 +7,7 @@ import com.food4health.base.BaseActivity
 import com.food4health.presentation.Account.view.AccountActivity
 import com.food4health.presentation.AddRecipe.View.AddRecipeActivity
 import com.food4health.presentation.Catalog.View.CatalogActivity
+import com.food4health.presentation.Favourite.View.FavouriteActivity
 import com.food4health.presentation.MainMenu.MainMenuContract
 import com.sinergia.food4health.R
 import kotlinx.android.synthetic.main.activity_main_menu.*
@@ -50,6 +51,6 @@ class MainMenuActivity : BaseActivity(), MainMenuContract.MainMenuView {
     }
 
     override fun navigateToFavourites() {
-        //startActivity(Intent(this, AccountActivity::class.java))
+        startActivity(Intent(this, FavouriteActivity::class.java))
     }
 }

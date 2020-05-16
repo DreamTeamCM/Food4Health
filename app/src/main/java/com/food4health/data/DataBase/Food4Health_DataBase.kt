@@ -231,6 +231,32 @@ class Food4Health_DataBase {
 
     }
 
+    suspend fun deleteRecipe(recipe: Recipe): Unit = suspendCancellableCoroutine { deleteRecipeContinuation ->
+
+        f4hDB
+            .collection("recipes")
+            .document(recipe.id)
+            .delete()
+            .addOnCompleteListener{deleteRecipe ->
+
+                if(deleteRecipe.isSuccessful){
+
+                    deleteRecipeContinuation.resume(Unit)
+
+                } else {
+
+                    deleteRecipeContinuation.resumeWithException(
+                        FirebaseDeleteRecipeException(
+                            deleteRecipe.exception?.message.toString()
+                        )
+                    )
+
+                }
+
+            }
+
+    }
+
     suspend fun getFavouriteRecipes(email: String): ArrayList<Recipe> = suspendCancellableCoroutine { getFavouriteRecipesContinuation ->
 
         var recipesList: ArrayList<Recipe> = arrayListOf()

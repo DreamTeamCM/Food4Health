@@ -13,6 +13,7 @@ import com.food4health.presentation.Catalog.CatalogContract
 import com.food4health.presentation.Catalog.Model.ItemCatalogViewModelImpl
 import com.food4health.presentation.Catalog.Presenter.ItemCatalogPresenter
 import com.food4health.presentation.MainMenu.View.MainMenuActivity
+import com.food4health.presentation.SetRecipe.View.SetRecipeActivity
 import com.sinergia.food4health.R
 import kotlinx.android.synthetic.main.activity_item_catalog.*
 import kotlinx.android.synthetic.main.layout_headder_bar.*
@@ -32,6 +33,9 @@ class ItemCatalogActivity : BaseActivity(), CatalogContract.ItemCatalogView {
 
         itemCatalogPresenter = ItemCatalogPresenter(ItemCatalogViewModelImpl())
         itemCatalogPresenter.attachView(this)
+
+        item_catalog_setRecipe_btn.setOnClickListener { startActivity(Intent(this, SetRecipeActivity::class.java)) }
+        item_catalog_deleteRecipe_btn.setOnClickListener { deleteRecipe() }
 
         getRecipe()
 
@@ -78,8 +82,26 @@ class ItemCatalogActivity : BaseActivity(), CatalogContract.ItemCatalogView {
         item_catalog_recipeButtons.visibility = View.GONE
     }
 
+    override fun enableItemCatalogButtons() {
+        item_catalog_setRecipe_btn.isClickable = true
+        item_catalog_setRecipe_btn.isEnabled = true
+        item_catalog_deleteRecipe_btn.isClickable = true
+        item_catalog_deleteRecipe_btn.isEnabled = true
+    }
+
+    override fun disableItemCatalogButtons() {
+        item_catalog_setRecipe_btn.isClickable = false
+        item_catalog_setRecipe_btn.isEnabled = false
+        item_catalog_deleteRecipe_btn.isClickable = false
+        item_catalog_deleteRecipe_btn.isEnabled = false
+    }
+
     override fun getRecipe() {
         itemCatalogPresenter.getItemCatalog(Food4Health.currentRecipe.id)
+    }
+
+    override fun deleteRecipe() {
+        itemCatalogPresenter.deleteRecipe(Food4Health.currentRecipe)
     }
 
     override fun initInitCatalogContent(recipe: Recipe) {
@@ -105,5 +127,9 @@ class ItemCatalogActivity : BaseActivity(), CatalogContract.ItemCatalogView {
         item_catalog_recipeContent_ingredients.text = ingredientsTxt
         item_catalog_recipeContent_preparation.text = preparationTxt
 
+    }
+
+    override fun navigateToCatalog() {
+        startActivity(Intent(this, CatalogActivity::class.java))
     }
 }

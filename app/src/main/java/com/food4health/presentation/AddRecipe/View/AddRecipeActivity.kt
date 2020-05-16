@@ -15,6 +15,7 @@ import com.food4health.data.Model.Recipe
 import com.food4health.presentation.AddRecipe.AddRecipeContract
 import com.food4health.presentation.AddRecipe.Model.AddRecipeViewModelImpl
 import com.food4health.presentation.AddRecipe.Presenter.AddRecipePresenter
+import com.food4health.presentation.Catalog.View.ItemCatalogActivity
 import com.food4health.presentation.MainMenu.View.MainMenuActivity
 import com.sinergia.food4health.R
 import kotlinx.android.synthetic.main.activity_add_recipe.*
@@ -160,10 +161,9 @@ class AddRecipeActivity : BaseActivity(), AddRecipeContract.AddRecipeView {
     }
 
     override fun navigateToRecipe(id: String) {
-        // TODO: Implement ItemCatalogActivity before descoment this function.
-        /*val loginIntent = Intent(this, ItemCatalogActivity::class.java)
+        val loginIntent = Intent(this, ItemCatalogActivity::class.java)
         loginIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-        startActivity(loginIntent)*/
+        startActivity(loginIntent)
     }
 
 }

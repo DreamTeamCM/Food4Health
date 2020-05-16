@@ -6,9 +6,11 @@ import com.food4health.domain.UseCases.RecipeUseCases
 
 
 class SetRecipeViewModelImpl: ViewModel(), SetRecipeViewModel {
+
     val recipeUseCases = RecipeUseCases()
 
     override suspend fun setRecipe(settedRecipe: Recipe) {
         return recipeUseCases.setRecipe(settedRecipe)
     }
+
 }

@@ -1,6 +1,7 @@
 package com.food4health.presentation.AddRecipe.Presenter
 
 import android.util.Log
+import com.food4health.Food4Health
 import com.food4health.base.Exceptions.FirebaseAddRecipeException
 import com.food4health.data.Model.Recipe
 import com.food4health.presentation.AddRecipe.AddRecipeContract
@@ -89,6 +90,7 @@ class AddRecipePresenter(addRecipeViewModel: AddRecipeViewModel): AddRecipeContr
             try{
 
                 addRecipeViewModel?.addRecipe(newRecipe)
+                Food4Health.currentRecipe = newRecipe
 
                 if(isViewAttached()){
                     view?.hideAddRecipeProgressBar()

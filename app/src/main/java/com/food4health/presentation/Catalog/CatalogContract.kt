@@ -28,9 +28,14 @@ interface CatalogContract {
         fun hideItemCatalogContent()
         fun showItemCatalogButtons()
         fun hideItemCatalogContentButtons()
+        fun enableItemCatalogButtons()
+        fun disableItemCatalogButtons()
 
         fun getRecipe()
+        fun deleteRecipe()
         fun initInitCatalogContent(recipe: Recipe)
+
+        fun navigateToCatalog()
 
     }
 
@@ -51,6 +56,7 @@ interface CatalogContract {
         fun isViewAttached(): Boolean
 
         fun getItemCatalog(id: String)
+        fun deleteRecipe(recipe: Recipe)
 
     }
 

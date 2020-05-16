@@ -5,4 +5,5 @@ import com.food4health.data.Model.Recipe
 interface SetRecipeViewModel {
 
     suspend fun setRecipe(settedRecipe: Recipe)
+
 }

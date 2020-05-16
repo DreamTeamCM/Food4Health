@@ -78,5 +78,46 @@ class ItemCatalogPresenter(itemCatalogViewModel: ItemCatalogViewModel): CatalogC
 
     }
 
+    override fun deleteRecipe(recipe: Recipe) {
+
+        Log.d(TAG, "Trying to delete recipe from Firebase.")
+
+        launch{
+
+            try{
+
+                if(isViewAttached()){
+                    view?.showItemCatalogProgressBar()
+                    view?.disableItemCatalogButtons()
+                    view?.showMessage(R.string.MSG_DELETERECIPE_SUCCESS)
+                }
+
+                itemCatalogViewModel?.deleteRecipe(recipe)
+
+                if(isViewAttached()){
+                    view?.hideItemCatalogProgressBar()
+                    view?.enableItemCatalogButtons()
+                    view?.showMessage(R.string.MSG_DELETERECIPE_SUCCESS)
+                    view?.navigateToCatalog()
+                }
+
+                Log.d(TAG, "Successfully delete recipe from Firebase.")
+
+            } catch (error: FirebaseGetRecipeException){
+
+                if(isViewAttached()){
+                    view?.hideItemCatalogProgressBar()
+                    view?.enableItemCatalogButtons()
+                    view?.showError(R.string.ERR_DELETERECIPE_FAILURE)
+                }
+
+                Log.d(TAG, "ERROR!: Cannot delete recipe from Firebase. Error Message --> ${error.message}.")
+
+            }
+
+        }
+
+    }
+
 
 }

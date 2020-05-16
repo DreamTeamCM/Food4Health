@@ -15,7 +15,9 @@ interface SetRecipeContract {
         fun initSetRecipeContent()
 
         fun addIngredient()
+        fun addIngredient(ingregient: String)
         fun addStep()
+        fun addStep(step: String)
 
         fun setRecipe()
         fun navigateToRecipe(id: String)

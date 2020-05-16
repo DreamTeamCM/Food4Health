@@ -67,6 +67,7 @@
     <string name="ERR_REGISTER_FAILURE">No se ha podido completar el registro, por favor, inténtelo más tarde.</string>
     <string name="ERR_ADDRECIPE_FAILURE">No se ha podido subir la receta, por favor, inténtelo más tarde.</string>
     <string name="ERR_GETRECIPE_FAILURE">No se han podido rescatar los recursos, inténtelo más tarde.</string>
+    <string name="ERR_DELETERECIPE_FAILURE">No se ha podido eliminar la receta, inténtelo más tarde.</string>
     <string name="ERR_LOGIN_FAILURE">No se ha podido iniciar sesión, por favor, revisa tus datos e inténtelo de nuevo.</string>
     <string name="ERR_UPDATEACCOUNT_FAILURE">No se ha podido actualizar tu cuenta, inténtelo más tarde.</string>
     <string name="ERR_UPDATEAVATAR_FAILURE">No se ha podido actualizar tu avatar, inténtelo más tarde.</string>
@@ -75,6 +76,7 @@
 
     <!-- APP MESSAGES MESSAGES -->
     <string name="MSG_ADDRECIPE_SUCCESS">¡¡ La receta se ha subido con éxito !!.</string>
+    <string name="MSG_DELETERECIPE_SUCCESS">¡¡ La receta se ha eliminado con éxito !!.</string>
     <string name="MSG_UPDATE_ACCOUNT">¡¡ Tu cuenta ha sido actualizada correctamente !!.</string>
     <string name="MSG_UPDATE_AVATAR">¡¡ Tu avatar ha sido actualizado correctamente !!.</string>
     <string name="MSG_DELETE_ACCOUNT">¡¡ Tu cuenta ha sido eliminada permanentemente !!.</string>
