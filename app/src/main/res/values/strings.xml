@@ -61,6 +61,7 @@
     <string name="BTN_DELETERECIPE">BORRAR</string>
     <string name="BTN_SETACCOUNT">ACTUALIZAR</string>
     <string name="BTN_DELETEACCOUNT">BORRAR CUENTA</string>
+    <string name="BTN_UPDATERECIPE">ACTUALIZAR</string>
 
     <!-- ERROR MESSAGES -->
     <string name="ERR_REGISTER_FAILURE">No se ha podido completar el registro, por favor, inténtelo más tarde.</string>

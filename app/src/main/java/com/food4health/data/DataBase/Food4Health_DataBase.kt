@@ -231,4 +231,38 @@ class Food4Health_DataBase {
 
     }
 
+    suspend fun getFavouriteRecipes(email: String): ArrayList<Recipe> = suspendCancellableCoroutine { getFavouriteRecipesContinuation ->
+
+        var recipesList: ArrayList<Recipe> = arrayListOf()
+
+        f4hDB
+            .collection("recipes")
+            .whereArrayContains("likes",email)
+            .get()
+            .addOnCompleteListener {getFavouriteRecipes ->
+
+                if(getFavouriteRecipes.isSuccessful){
+
+                    for(recipe in getFavouriteRecipes.getResult()!!){
+                        var inputRecipe = recipe.toObject(Recipe::class.java)
+                        inputRecipe.id = recipe.id
+                        recipesList.add(inputRecipe)
+                    }
+
+                    getFavouriteRecipesContinuation.resume(recipesList)
+
+                } else {
+
+                    getFavouriteRecipesContinuation.resumeWithException(
+                        FirebaseGetFavouriteRecipesException(
+                            getFavouriteRecipes.exception?.message.toString()
+                        )
+                    )
+
+                }
+
+            }
+
+    }
+
 }

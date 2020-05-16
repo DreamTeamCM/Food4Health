@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/orange_background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.food4health.presentation.SetRecipe.View.SetRecipeActivity">
+
+    <include
+        layout="@layout/layout_headder_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/f4h_logo"
+                android:visibility="visible"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical"
+                android:padding="25dp">
+
+                <TextView
+                    android:id="@+id/setRecipe_name_aux"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/FR_RECIPENAME" />
+
+                <EditText
+                    android:id="@+id/setRecipe_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:ems="10"
+                    android:hint="@string/FRH_RECIPENAME"
+                    android:inputType="textCapWords" />
+
+                <TextView
+                    android:id="@+id/setRecipe_description_aux"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/FR_DESCRIPTION" />
+
+                <EditText
+                    android:id="@+id/setRecipe_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:layout_marginBottom="10dp"
+                    android:hint="@string/FRH_DESCRIPTION"
+                    android:inputType="textMultiLine|textCapSentences" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/setRecipe_ingredients_aux"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/FR_INGREDIENTS" />
+
+                    <TextView
+                        android:id="@+id/setRecipe_addIngredient"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:textColor="@color/colorWhite"
+                        android:text="@string/FR_ADDINGREDIENT" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/setRecipe_ingredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="10dp">
+                    <EditText
+                        android:id="@+id/setRecipe_principalIngredient"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/FRH_INGREDIENTS"
+                        android:inputType="textCapSentences" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/setRecipe_preparation_aux"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:text="@string/FR_PREPARATION" />
+
+                    <TextView
+                        android:id="@+id/setRecipe_addStep"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:textColor="@color/colorWhite"
+                        android:text="@string/FR_ADDSTEP" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/setRecipe_preparation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="10dp">
+                    <EditText
+                        android:id="@+id/setRecipe_principalStep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/FRH_PREPARATION"
+                        android:inputType="textCapSentences" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/setRecipe_suggestons_aux"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/FR_SUGGESTION" />
+
+                <EditText
+                    android:id="@+id/setRecipe_suggestons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:layout_marginBottom="10dp"
+                    android:hint="@string/FRH_SUGGESTION"
+                    android:inputType="textMultiLine|textCapSentences" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:id="@+id/setRecipe_progressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/AVLoadingIndicatorView.Large"
+                        android:visibility="invisible"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        app:indicatorName="PacmanIndicator"
+                        app:indicatorColor="@color/colorBlue" />
+
+                    <com.beardedhen.androidbootstrap.BootstrapButton
+                        android:id="@+id/setRecipe_button"
+                        android:layout_width="250dp"
+                        android:layout_height="50dp"
+                        android:text="@string/BTN_UPDATERECIPE"
+                        app:bootstrapBrand="primary"
+                        app:bootstrapSize="lg"
+                        app:buttonMode="regular"
+                        app:showOutline="false"
+                        app:roundedCorners="true"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

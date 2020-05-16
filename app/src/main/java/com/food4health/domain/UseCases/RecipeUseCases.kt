@@ -22,4 +22,8 @@ class RecipeUseCases {
     suspend fun setRecipe(settedRecipe: Recipe){
         return f4hDB.setRecipe(settedRecipe)
     }
+
+    suspend fun getFavouriteRecipes(email:String): ArrayList<Recipe>{
+        return f4hDB.getFavouriteRecipes(email)
+    }
 }

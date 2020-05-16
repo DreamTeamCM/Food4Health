@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.food4health.presentation.Account.view.AccountActivity"></activity>
+        <activity android:name="com.food4health.presentation.SetRecipe.View.SetRecipeActivity"></activity>
+        <activity android:name="com.food4health.presentation.Favourite.View.FavouriteActivity" />
+        <activity android:name="com.food4health.presentation.Account.view.AccountActivity" />
         <activity android:name="com.food4health.presentation.Catalog.View.ItemCatalogActivity" />
         <activity android:name="com.food4health.presentation.Catalog.View.CatalogActivity" />
         <activity android:name="com.food4health.presentation.AddRecipe.View.AddRecipeActivity" />
