@@ -62,6 +62,7 @@
     <string name="BTN_SETACCOUNT">ACTUALIZAR</string>
     <string name="BTN_DELETEACCOUNT">BORRAR CUENTA</string>
     <string name="BTN_UPDATERECIPE">ACTUALIZAR</string>
+    <string name="BTN_SEARCH">BUSCAR</string>
 
     <!-- ERROR MESSAGES -->
     <string name="ERR_REGISTER_FAILURE">No se ha podido completar el registro, por favor, inténtelo más tarde.</string>
@@ -74,7 +75,8 @@
     <string name="ERR_UPDATERECIPEIMAGE_FAILURE">No se ha podido actualizar la imagen de tu receta, inténtelo más tarde.</string>
     <string name="ERR_DELETEACCOUNT_FAILURE">No se ha podido borrar tu cuenta, inténtelo más tarde.</string>
     <string name="ERR_PERMISSION_GALLERY">No se podrá acceder al almacenamiento del dispositivo hasta que concedas todos los permisos.</string>
-    <string name="ERR_SET_LIKES">No se ha podido guardar tu voto, por favor, inténtalo mas tarde..</string>
+    <string name="ERR_SET_LIKES">No se ha podido guardar tu voto, por favor, inténtalo mas tarde...</string>
+    <string name="ERR_SEARCH">Vaya, no tenemos ninguna receta con ese nombre...</string>
 
     <!-- APP MESSAGES MESSAGES -->
     <string name="MSG_ADDRECIPE_SUCCESS">¡¡ La receta se ha subido con éxito !!.</string>

@@ -40,6 +40,34 @@ class CatalogPresenter(catalogViewModel: CatalogViewModel): CatalogContract.Cata
         return this.view != null
     }
 
+    override fun search(recipes: ArrayList<Recipe>, searcher: String) {
+
+        var searchResult = arrayListOf<Recipe>()
+        var stringPattern = ""
+
+        for(word in searcher.split(" ")){
+            stringPattern += "(${word.toLowerCase()})|"
+        }
+        stringPattern = stringPattern.substring(0, stringPattern.length-1)
+
+        val pattern = stringPattern.toRegex()
+
+        for(recipe in recipes){
+            if(pattern.containsMatchIn(recipe.name.toLowerCase()  )) searchResult.add(recipe)
+        }
+
+        if(isViewAttached()) {
+            if(searchResult.size == 0){
+                view?.showError(R.string.ERR_SEARCH)
+                view?.initCatalogContent(recipes)
+            } else {
+                view?.initCatalogContent(searchResult)
+            }
+
+        }
+
+    }
+
     override fun getAllRecipes() {
 
         Log.d(TAG, "Trying to get all recipes from Firebase.")
@@ -55,6 +83,7 @@ class CatalogPresenter(catalogViewModel: CatalogViewModel): CatalogContract.Cata
                 recipesList = catalogViewModel?.getAllRecipes()!!
 
                 if(isViewAttached()){
+                    view?.attachAllRecipes(ArrayList(recipesList!!))
                     view?.initCatalogContent(recipesList!!)
                     view?.showCatalogContent()
                     view?.hideCatalogProgressBar()

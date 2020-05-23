@@ -12,6 +12,11 @@ interface CatalogContract {
         fun hideCatalogProgressBar()
         fun showCatalogContent()
         fun hideCatalogContent()
+        fun enableSearchButton()
+        fun disableSearchButton()
+        fun attachAllRecipes(allRecipes: ArrayList<Recipe>)
+
+        fun search()
 
         fun getAllRecipes()
         fun initCatalogContent(recipes: List<Recipe>)
@@ -47,6 +52,8 @@ interface CatalogContract {
         fun attachView(view: CatalogContract.CatalogView)
         fun dettachView()
         fun isViewAttached(): Boolean
+
+        fun search(recipes: ArrayList<Recipe>, searcher: String)
 
         fun getAllRecipes()
 

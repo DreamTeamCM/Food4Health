@@ -16,10 +16,12 @@ import com.food4health.presentation.MainMenu.View.MainMenuActivity
 import com.sinergia.food4health.R
 import kotlinx.android.synthetic.main.activity_catalog.*
 import kotlinx.android.synthetic.main.layout_headder_bar.*
+import kotlinx.android.synthetic.main.layout_search.*
 
 class CatalogActivity : BaseActivity(), CatalogContract.CatalogView {
 
     val createCards: CreateCards = CreateCards()
+    lateinit var allRecipes: ArrayList<Recipe>
 
     lateinit var catalogPresenter: CatalogContract.CatalogPresenter
 
@@ -34,6 +36,8 @@ class CatalogActivity : BaseActivity(), CatalogContract.CatalogView {
 
         catalogPresenter = CatalogPresenter(CatalogViewModelImpl())
         catalogPresenter.attachView(this)
+
+        search_button.setOnClickListener { search() }
 
         getAllRecipes()
 
@@ -72,11 +76,32 @@ class CatalogActivity : BaseActivity(), CatalogContract.CatalogView {
         catalog_content.visibility = View.GONE
     }
 
+    override fun enableSearchButton() {
+        search_button.isClickable = true
+        search_button.isEnabled = true
+    }
+
+    override fun disableSearchButton() {
+        search_button.isClickable = false
+        search_button.isEnabled = false
+    }
+
+    override fun attachAllRecipes(allRecipes: ArrayList<Recipe>) {
+        this.allRecipes = allRecipes
+    }
+
+    override fun search() {
+        var searcher: String = search_text.text.toString()
+        catalogPresenter.search(allRecipes, searcher)
+    }
+
     override fun getAllRecipes() {
         catalogPresenter.getAllRecipes()
     }
 
     override fun initCatalogContent(recipes: List<Recipe>) {
+
+        catalog_content.removeAllViews()
 
         for(recipe in recipes){
             val recipeCard = createCards.createRecipeCard(this, recipe)

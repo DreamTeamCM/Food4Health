@@ -119,7 +119,7 @@ class SetRecipeActivity : BaseActivity(), SetRecipeContract.SetRecipeView {
         for(recipeStep in currentRecipeSteps){
 
             if(recipeStep.key == "1"){
-                setRecipe_principalIngredient.setText(recipeStep.value)
+                setRecipe_principalStep.setText(recipeStep.value)
             } else {
                 addStep(recipeStep.value)
             }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@android:color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="20dp">
+
+        <EditText
+            android:id="@+id/search_text"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:ems="10"
+            android:fontFamily="verdana"
+            android:hint="@string/FRH_RECIPENAME"
+            android:inputType="text"
+            android:paddingStart="50dp" />
+        <ImageView
+            android:id="@+id/seacrh_icon"
+            android:layout_width="30dp"
+            android:layout_height="41dp"
+            android:layout_alignStart="@+id/account_userName"
+            android:layout_alignTop="@+id/account_userName"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="-2dp"
+            android:elevation="5dp"
+            android:src="@drawable/icon_search" />
+
+    </RelativeLayout>
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/search_button"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:text="@string/BTN_SEARCH"
+        app:bootstrapBrand="primary"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"
+        android:layout_margin="10dp"
+        />
+
+</LinearLayout>
