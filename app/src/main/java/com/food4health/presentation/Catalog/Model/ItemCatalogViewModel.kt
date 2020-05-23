@@ -6,6 +6,8 @@ interface ItemCatalogViewModel {
 
     suspend fun getItemCatalog(id: String): Recipe
 
+    suspend fun setLikes(settedRecipe: Recipe)
+
     suspend fun deleteRecipe(recipe: Recipe)
 
 }

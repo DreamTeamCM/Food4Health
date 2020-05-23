@@ -1,7 +1,10 @@
 package com.food4health.presentation.SetRecipe.Presenter
 
+import android.net.Uri
 import android.util.Log
+import com.food4health.Food4Health
 import com.food4health.base.Exceptions.FirebaseSetRecipeException
+import com.food4health.base.Exceptions.FirebaseStorageUploadImageException
 import com.food4health.data.Model.Recipe
 import com.food4health.presentation.SetRecipe.Model.SetRecipeViewModel
 import com.food4health.presentation.SetRecipe.SetRecipeContract
@@ -110,5 +113,59 @@ class SetRecipePresenter(setRecipeViewModel: SetRecipeViewModel): SetRecipeContr
                 Log.d(TAG, "ERROR!: Cannot set recipe in Firebase. Error Message --> ${error.message}.")
             }
         }
+    }
+
+    override fun uploadRecipeImage(imageURI: Uri) {
+
+        Log.d(TAG, "Trying to update recipe image with name ${Food4Health.currentRecipe.name}.")
+
+        launch{
+
+            if(isViewAttached()){
+                view?.disableSetRecipeButton()
+                view?.showSetRecipeProgressBar()
+            }
+
+            try{
+
+                val newRecipeImage = setRecipeViewModel?.uploadRecipeImage(Food4Health.currentRecipe.id, imageURI)!!
+                Food4Health.currentRecipe.image = newRecipeImage.toString()
+                setRecipeViewModel?.setRecipe(Food4Health.currentRecipe)
+
+                if(isViewAttached()){
+                    view?.showMessage(R.string.MSG_UPDATERECIPEIMAGE_AVATAR)
+                    view?.hideSetRecipeProgressBar()
+                    view?.enableSetRecipeButton()
+                    view?.navigateToRecipe(Food4Health.currentRecipe.id)
+                }
+
+            } catch (error: FirebaseStorageUploadImageException){
+
+                val errorMsg = error.message
+                if(isViewAttached()){
+                    view?.showError(R.string.ERR_UPDATERECIPEIMAGE_FAILURE)
+                    view?.hideSetRecipeProgressBar()
+                    view?.enableSetRecipeButton()
+                }
+
+                Log.d(TAG, "Cannot update recipe image to account with email ${Food4Health.currentUser.email} --> $errorMsg.")
+
+            } catch (error: FirebaseSetRecipeException){
+
+                val errorMsg = error.message
+                if(isViewAttached()){
+                    view?.showError(R.string.ERR_UPDATERECIPEIMAGE_FAILURE)
+                    view?.hideSetRecipeProgressBar()
+                    view?.enableSetRecipeButton()
+                }
+
+                Log.d(TAG, "Cannot update recipe image to account with email ${Food4Health.currentUser.email} --> $errorMsg.")
+
+            }
+
+
+
+        }
+
     }
 }

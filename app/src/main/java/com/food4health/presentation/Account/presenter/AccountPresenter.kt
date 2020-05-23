@@ -159,14 +159,15 @@ class AccountPresenter(accountViewModel: AccountViewModel, accountInteractor: Ac
 
     override fun uploadUserImage(imageURI: Uri) {
 
-        if(isViewAttach()){
-            view?.disableAllButtons()
-            view?.showProgressBar()
-        }
+        Log.d(TAG, "Trying to update avatar image to account with email ${Food4Health.currentUser.email}.")
 
         launch{
 
-            Log.d(TAG, "Trying to update avatar image to account with email ${Food4Health.currentUser.email}.")
+
+            if(isViewAttach()){
+                view?.disableAllButtons()
+                view?.showProgressBar()
+            }
 
             try{
 

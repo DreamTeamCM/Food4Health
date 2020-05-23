@@ -12,6 +12,10 @@ class ItemCatalogViewModelImpl: ViewModel(), ItemCatalogViewModel {
         return recipeUseCases.getRecipe(id)
     }
 
+    override suspend fun setLikes(settedRecipe: Recipe) {
+        return recipeUseCases.setRecipe(settedRecipe)
+    }
+
     override suspend fun deleteRecipe(recipe: Recipe) {
         return recipeUseCases.deleteRecipe(recipe)
     }

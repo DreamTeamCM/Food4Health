@@ -86,6 +86,7 @@ class AddRecipeActivity : BaseActivity(), AddRecipeContract.AddRecipeView {
         ingredient.height = addRecipe_principalIngredient.height
         ingredient.hint = getString(R.string.FRH_INGREDIENTS)
         ingredient.inputType = addRecipe_principalIngredient.inputType
+        ingredient.setTextColor(addRecipe_principalIngredient.currentTextColor)
         addRecipe_ingredients.addView(ingredient)
     }
 
@@ -95,6 +96,7 @@ class AddRecipeActivity : BaseActivity(), AddRecipeContract.AddRecipeView {
         step.height = addRecipe_principalStep.height
         step.hint = getString(R.string.FRH_PREPARATION)
         step.inputType = addRecipe_principalStep.inputType
+        step.setTextColor(addRecipe_principalStep.currentTextColor)
         addRecipe_preparation.addView(step)
     }
 

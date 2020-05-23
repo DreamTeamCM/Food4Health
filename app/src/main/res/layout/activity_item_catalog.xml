@@ -43,10 +43,36 @@
                 android:gravity="center_horizontal">
 
                 <ImageView
+                    android:id="@+id/item_catalog_recipe_image"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:src="@drawable/f4h_logo"
                     android:layout_marginBottom="20dp" />
+
+                <LinearLayout
+                    android:id="@+id/item_catalog_like_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/style_principal_container" >
+                    <ImageView
+                        android:id="@+id/item_catalog_image_likes"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/favourite" />
+                    <TextView
+                        android:id="@+id/item_catalog_number_likes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="500"
+                        android:textAlignment="center"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/item_catalog_recipeContent"
@@ -54,7 +80,9 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="left"
-                    android:padding="20dp" >
+                    android:padding="20dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/style_principal_container" >
 
                     <TextView
                         android:id="@+id/item_catalog_recipeContent_name"

@@ -1,11 +1,18 @@
 package com.food4health.presentation.SetRecipe.View
 
+import android.Manifest
+import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.LinearLayout
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.view.children
+import com.bumptech.glide.Glide
 import com.food4health.Food4Health
 import com.food4health.base.BaseActivity
 import com.food4health.data.DataBase.FoodForHealth_Storage
@@ -16,6 +23,7 @@ import com.food4health.presentation.SetRecipe.Model.SetRecipeViewModelImpl
 import com.food4health.presentation.SetRecipe.Presenter.SetRecipePresenter
 import com.food4health.presentation.SetRecipe.SetRecipeContract
 import com.sinergia.food4health.R
+import kotlinx.android.synthetic.main.activity_account.*
 import kotlinx.android.synthetic.main.activity_set_recipe.*
 import kotlinx.android.synthetic.main.layout_headder_bar.*
 import java.time.LocalDateTime
@@ -36,7 +44,10 @@ class SetRecipeActivity : BaseActivity(), SetRecipeContract.SetRecipeView {
         setRecipe_addIngredient.setOnClickListener { addIngredient() }
         setRecipe_addStep.setOnClickListener { addStep() }
 
+        setRecipe_recipe_image.setOnClickListener { uploadGalleryImage() }
         setRecipe_button.setOnClickListener { setRecipe() }
+
+        initSetRecipeContent()
 
     }
 
@@ -76,11 +87,20 @@ class SetRecipeActivity : BaseActivity(), SetRecipeContract.SetRecipeView {
     }
 
     override fun initSetRecipeContent() {
-        setRecipe_name.setText(Food4Health.currentRecipe.name.toString())
-        setRecipe_description.setText(Food4Health.currentRecipe.description.toString())
+        setRecipe_name.setText(Food4Health.currentRecipe.name)
+        setRecipe_description.setText(Food4Health.currentRecipe.description)
         setRecipe_principalIngredient
         setRecipe_principalStep
-        setRecipe_suggestons.setText(Food4Health.currentRecipe.suggestions.toString())
+        setRecipe_suggestons.setText(Food4Health.currentRecipe.suggestions)
+
+        if(Food4Health.currentRecipe.image != "noImage"){
+            Glide
+                .with(this)
+                .load(Uri.parse(Food4Health.currentRecipe.image))
+                .fitCenter()
+                .centerCrop()
+                .into(setRecipe_recipe_image)
+        }
 
         val currentRecipeIngredients = Food4Health.currentRecipe.ingredients
         val currentRecipeSteps = Food4Health.currentRecipe.preparation
@@ -101,7 +121,7 @@ class SetRecipeActivity : BaseActivity(), SetRecipeContract.SetRecipeView {
             if(recipeStep.key == "1"){
                 setRecipe_principalIngredient.setText(recipeStep.value)
             } else {
-                addIngredient(recipeStep.value)
+                addStep(recipeStep.value)
             }
 
         }
@@ -113,6 +133,7 @@ class SetRecipeActivity : BaseActivity(), SetRecipeContract.SetRecipeView {
         ingredient.height = setRecipe_principalIngredient.height
         ingredient.hint = getString(R.string.FRH_INGREDIENTS)
         ingredient.inputType = setRecipe_principalIngredient.inputType
+        ingredient.setTextColor(setRecipe_principalIngredient.currentTextColor)
         setRecipe_ingredients.addView(ingredient)
     }
 
@@ -122,6 +143,7 @@ class SetRecipeActivity : BaseActivity(), SetRecipeContract.SetRecipeView {
         ingredient.height = setRecipe_principalIngredient.height
         ingredient.hint = getString(R.string.FRH_INGREDIENTS)
         ingredient.inputType = setRecipe_principalIngredient.inputType
+        ingredient.setTextColor(setRecipe_principalIngredient.currentTextColor)
         ingredient.setText(recipeIngredient)
         setRecipe_ingredients.addView(ingredient)
     }
@@ -132,6 +154,7 @@ class SetRecipeActivity : BaseActivity(), SetRecipeContract.SetRecipeView {
         step.height = setRecipe_principalStep.height
         step.hint = getString(R.string.FRH_PREPARATION)
         step.inputType = setRecipe_principalStep.inputType
+        step.setTextColor(setRecipe_principalStep.currentTextColor)
         setRecipe_preparation.addView(step)
     }
 
@@ -141,6 +164,7 @@ class SetRecipeActivity : BaseActivity(), SetRecipeContract.SetRecipeView {
         step.height = setRecipe_principalStep.height
         step.hint = getString(R.string.FRH_PREPARATION)
         step.inputType = setRecipe_principalStep.inputType
+        step.setTextColor(setRecipe_principalStep.currentTextColor)
         step.setText(recipeStep)
         setRecipe_preparation.addView(step)
     }
@@ -213,4 +237,52 @@ class SetRecipeActivity : BaseActivity(), SetRecipeContract.SetRecipeView {
     override fun navigateToRecipe(id: String) {
         startActivity(Intent(this, ItemCatalogActivity::class.java))
     }
+
+    // GALLERY METHODS
+    override fun checkAndSetGalleryPermissions() {
+        val permissionStatusRead = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+
+        if(permissionStatusRead == PackageManager.PERMISSION_GRANTED) {
+            Food4Health.storagePermissionGranted = true
+        } else {
+            if (permissionStatusRead != PackageManager.PERMISSION_GRANTED) ActivityCompat.requestPermissions(this, arrayOf(
+                Manifest.permission.READ_EXTERNAL_STORAGE), Food4Health.READ_STORAGE_PERMISSIONS_CODE)
+        }
+    }
+
+    override fun uploadGalleryImage() {
+        if(Food4Health.storagePermissionGranted){
+            val galleryIntent = Intent(Intent.ACTION_PICK)
+            galleryIntent.type = "image/*"
+            startActivityForResult(galleryIntent, Food4Health.GALLERY_INTENT_CODE)
+        } else {
+            toastL(this, getString(R.string.MSG_PERMISSION_GALLERY_REQUEST))
+            checkAndSetGalleryPermissions()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, imageData: Intent?) {
+
+        super.onActivityResult(requestCode, resultCode, imageData)
+
+        if(requestCode == Food4Health.GALLERY_INTENT_CODE && resultCode == Activity.RESULT_OK){
+
+            var imageURI: Uri = imageData?.data!!
+            setRecipePresenter.uploadRecipeImage(imageURI)
+
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        when(requestCode) {
+            Food4Health.READ_STORAGE_PERMISSIONS_CODE ->
+                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Food4Health.storagePermissionGranted = (
+                            ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
+                } else {
+                    toastL(this, getString(R.string.ERR_PERMISSION_GALLERY))
+                }
+        }
+    }
+
 }

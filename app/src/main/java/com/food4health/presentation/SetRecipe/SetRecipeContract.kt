@@ -1,5 +1,6 @@
 package com.food4health.presentation.SetRecipe
 
+import android.net.Uri
 import com.food4health.data.Model.Recipe
 
 interface SetRecipeContract {
@@ -22,6 +23,9 @@ interface SetRecipeContract {
         fun setRecipe()
         fun navigateToRecipe(id: String)
 
+        fun checkAndSetGalleryPermissions()
+        fun uploadGalleryImage()
+
     }
 
     interface SetRecipePresenter{
@@ -38,6 +42,9 @@ interface SetRecipeContract {
         fun checkEmptyFields(name: String, description: String, ingredients: ArrayList<String>, preparation: Map<String, String>, suggestions: String): Boolean
 
         fun setRecipe(newRecipe: Recipe)
+
+        fun uploadRecipeImage(imageURI: Uri)
+
     }
 
 }

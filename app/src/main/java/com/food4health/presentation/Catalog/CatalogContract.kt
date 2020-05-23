@@ -31,6 +31,9 @@ interface CatalogContract {
         fun enableItemCatalogButtons()
         fun disableItemCatalogButtons()
 
+        fun setLikes()
+        fun setLikeImage(type: Int) // 0 -> Dislike; 1-> Like
+
         fun getRecipe()
         fun deleteRecipe()
         fun initInitCatalogContent(recipe: Recipe)
@@ -54,6 +57,8 @@ interface CatalogContract {
         fun attachView(view: CatalogContract.ItemCatalogView)
         fun dettachView()
         fun isViewAttached(): Boolean
+
+        fun setLikes()
 
         fun getItemCatalog(id: String)
         fun deleteRecipe(recipe: Recipe)

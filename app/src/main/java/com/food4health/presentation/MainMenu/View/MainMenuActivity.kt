@@ -25,7 +25,7 @@ class MainMenuActivity : BaseActivity(), MainMenuContract.MainMenuView {
         headder_bar_menu_btn.setOnClickListener { finish() }
 
         menu_catalog.setOnClickListener { navigateToCatalog() }
-        menu_favourites.setOnClickListener { toastL(this, getString(R.string.SYS_DEVELOP)) }
+        menu_favourites.setOnClickListener { navigateToFavourites() }
         menu_uploadRecipe.setOnClickListener { navigateToAddRecipe() }
         menu_account.setOnClickListener { navigateToAccount() }
     }

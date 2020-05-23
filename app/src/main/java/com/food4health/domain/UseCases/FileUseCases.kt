@@ -11,4 +11,8 @@ class FileUseCases {
         return f4hStorage.uploadUserImage(owner, imageURI)
     }
 
+    suspend fun uploadRecipeImage(recipeId: String, imageURI: Uri): Uri{
+        return f4hStorage.uploadRecipeImage(recipeId, imageURI)
+    }
+
 }

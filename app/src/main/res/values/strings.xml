@@ -71,15 +71,20 @@
     <string name="ERR_LOGIN_FAILURE">No se ha podido iniciar sesión, por favor, revisa tus datos e inténtelo de nuevo.</string>
     <string name="ERR_UPDATEACCOUNT_FAILURE">No se ha podido actualizar tu cuenta, inténtelo más tarde.</string>
     <string name="ERR_UPDATEAVATAR_FAILURE">No se ha podido actualizar tu avatar, inténtelo más tarde.</string>
+    <string name="ERR_UPDATERECIPEIMAGE_FAILURE">No se ha podido actualizar la imagen de tu receta, inténtelo más tarde.</string>
     <string name="ERR_DELETEACCOUNT_FAILURE">No se ha podido borrar tu cuenta, inténtelo más tarde.</string>
     <string name="ERR_PERMISSION_GALLERY">No se podrá acceder al almacenamiento del dispositivo hasta que concedas todos los permisos.</string>
+    <string name="ERR_SET_LIKES">No se ha podido guardar tu voto, por favor, inténtalo mas tarde..</string>
 
     <!-- APP MESSAGES MESSAGES -->
     <string name="MSG_ADDRECIPE_SUCCESS">¡¡ La receta se ha subido con éxito !!.</string>
     <string name="MSG_DELETERECIPE_SUCCESS">¡¡ La receta se ha eliminado con éxito !!.</string>
+    <string name="MSG_UPDATERECIPEIMAGE_AVATAR">¡¡ La imagen de tu receta ha sido actualizada correctamente !!.</string>
     <string name="MSG_UPDATE_ACCOUNT">¡¡ Tu cuenta ha sido actualizada correctamente !!.</string>
     <string name="MSG_UPDATE_AVATAR">¡¡ Tu avatar ha sido actualizado correctamente !!.</string>
     <string name="MSG_DELETE_ACCOUNT">¡¡ Tu cuenta ha sido eliminada permanentemente !!.</string>
     <string name="MSG_PERMISSION_GALLERY_REQUEST">Por favor permite que la app acceda al almacenamiento del dispositivo.</string>
+    <string name="MSG_SET_LIKES_LIKE">¡¡ Ya se ha añadido esta receta a tu lista de favoritos !!.</string>
+    <string name="MSG_SET_LIKES_DISLIKE">¿Ya no te gusta? Ya se ha eliminado esta receta de tu lista de favoritos.</string>
 
 </resources>

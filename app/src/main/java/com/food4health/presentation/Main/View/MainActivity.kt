@@ -1,7 +1,11 @@
 package com.food4health.presentation.Main.View
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import androidx.core.content.ContextCompat
+import com.food4health.Food4Health
 import com.sinergia.food4health.R
 import com.food4health.base.BaseActivity
 import com.food4health.presentation.Login.View.LoginActivity
@@ -14,8 +18,14 @@ class MainActivity : BaseActivity(), MainContract.MainView {
     // CONSTRUCTOR
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         main_login_button.setOnClickListener { navigateToLogin() }
         main_register_button.setOnClickListener { navigateToRegister() }
+
+
+        Food4Health.storagePermissionGranted = (
+                ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
+
     }
 
     //BASE ACTIVITY IMPLEMENT METHODS

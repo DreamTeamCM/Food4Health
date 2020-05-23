@@ -16,35 +16,80 @@ class FoodForHealth_Storage {
 
         f4hStorage
             .child("images/$owner")
-            .downloadUrl
-            .addOnCompleteListener { getDownLoadURI ->
+            .putFile(imageURI)
+            .addOnCompleteListener { uploadImage ->
 
-                if(getDownLoadURI.isSuccessful){
+                if(uploadImage.isSuccessful){
 
                     f4hStorage
                         .child("images/$owner")
-                        .putFile(imageURI)
-                        .addOnCompleteListener { uploadImage ->
+                        .downloadUrl
+                        .addOnCompleteListener { getDownLoadURI ->
 
-                            if(uploadImage.isSuccessful){
+                            if (getDownLoadURI.isSuccessful) {
 
                                 uploaduserImageContinuation.resume(getDownLoadURI.result!!)
 
                             } else {
+
                                 uploaduserImageContinuation.resumeWithException(
-                                    FirebaseStorageUploadImageException(uploadImage.exception?.message.toString())
+                                    FirebaseStorageGetDownloadURIException(getDownLoadURI.exception?.message.toString())
                                 )
+
                             }
 
                         }
 
                 } else {
+
                     uploaduserImageContinuation.resumeWithException(
-                        FirebaseStorageGetDownloadURIException(getDownLoadURI.exception?.message.toString())
+                        FirebaseStorageUploadImageException(uploadImage.exception?.message.toString())
                     )
+
                 }
 
             }
 
     }
+
+    suspend fun uploadRecipeImage(recipeId: String, imageURI: Uri): Uri = suspendCancellableCoroutine{ uploaduserImageContinuation ->
+
+        f4hStorage
+            .child("recipes/$recipeId")
+            .putFile(imageURI)
+            .addOnCompleteListener { uploadImage ->
+
+                if(uploadImage.isSuccessful){
+
+                    f4hStorage
+                        .child("recipes/$recipeId")
+                        .downloadUrl
+                        .addOnCompleteListener { getDownLoadURI ->
+
+                            if (getDownLoadURI.isSuccessful) {
+
+                                uploaduserImageContinuation.resume(getDownLoadURI.result!!)
+
+                            } else {
+
+                                uploaduserImageContinuation.resumeWithException(
+                                    FirebaseStorageGetDownloadURIException(getDownLoadURI.exception?.message.toString())
+                                )
+
+                            }
+
+                        }
+
+                } else {
+
+                    uploaduserImageContinuation.resumeWithException(
+                        FirebaseStorageUploadImageException(uploadImage.exception?.message.toString())
+                    )
+
+                }
+
+            }
+
+    }
+
 }
