@@ -15,6 +15,7 @@ import com.food4health.data.Model.Recipe
 import com.food4health.presentation.AddRecipe.AddRecipeContract
 import com.food4health.presentation.AddRecipe.Model.AddRecipeViewModelImpl
 import com.food4health.presentation.AddRecipe.Presenter.AddRecipePresenter
+import com.food4health.presentation.Catalog.View.CatalogActivity
 import com.food4health.presentation.Catalog.View.ItemCatalogActivity
 import com.food4health.presentation.MainMenu.View.MainMenuActivity
 import com.sinergia.food4health.R
@@ -162,10 +163,10 @@ class AddRecipeActivity : BaseActivity(), AddRecipeContract.AddRecipeView {
 
     }
 
-    override fun navigateToRecipe(id: String) {
-        val loginIntent = Intent(this, ItemCatalogActivity::class.java)
-        loginIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-        startActivity(loginIntent)
+    override fun navigateToCatalog() {
+        val catalogIntent = Intent(this, CatalogActivity::class.java)
+        catalogIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(catalogIntent)
     }
 
 }

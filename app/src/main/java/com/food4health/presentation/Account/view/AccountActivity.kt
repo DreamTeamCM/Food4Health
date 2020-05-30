@@ -45,6 +45,8 @@ class AccountActivity : BaseActivity(), AccountContract.AccountView {
 
         account_userAvatar.setOnClickListener { uploadGalleryImage() }
         account_logout.setOnClickListener { logOut() }
+        account_update_btn.setOnClickListener { updateAccount() }
+        account_delete_btn.setOnClickListener { deleteAccount() }
         initAccountContent()
 
     }

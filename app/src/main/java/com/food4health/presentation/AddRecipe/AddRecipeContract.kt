@@ -18,7 +18,7 @@ interface AddRecipeContract {
         fun addStep()
 
         fun addRecipe()
-        fun navigateToRecipe(id: String)
+        fun navigateToCatalog()
 
     }
 

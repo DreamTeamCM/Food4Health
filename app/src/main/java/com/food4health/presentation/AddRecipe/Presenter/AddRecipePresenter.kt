@@ -96,6 +96,7 @@ class AddRecipePresenter(addRecipeViewModel: AddRecipeViewModel): AddRecipeContr
                     view?.hideAddRecipeProgressBar()
                     view?.enableAddRecipeButton()
                     view?.showMessage(R.string.MSG_ADDRECIPE_SUCCESS)
+                    view?.navigateToCatalog()
                 }
 
                 Log.d(TAG, "Succesfully add recipe with name ${newRecipe.name}.")

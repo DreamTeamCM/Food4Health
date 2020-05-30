@@ -307,13 +307,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="center_horizontal"
+                    android:gravity="center_vertical"
                     android:padding="10dp">
 
                     <com.beardedhen.androidbootstrap.BootstrapButton
                         android:id="@+id/account_update_btn"
                         android:layout_width="250dp"
-                        android:layout_height="50dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/BTN_SETACCOUNT"
                         app:bootstrapBrand="primary"
@@ -327,7 +327,7 @@
                     <com.beardedhen.androidbootstrap.BootstrapButton
                         android:id="@+id/account_delete_btn"
                         android:layout_width="250dp"
-                        android:layout_height="50dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/BTN_DELETEACCOUNT"
                         app:bootstrapBrand="danger"
